@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a0a">
+<title>Checklist Viagem EUA ✈️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f3ef;
+    --surface: #ffffff;
+    --surface2: #f0ede8;
+    --border: rgba(0,0,0,0.09);
+    --border2: rgba(0,0,0,0.15);
+    --text: #1a1a1a;
+    --text2: #5a5a5a;
+    --text3: #999;
+    --accent: #1a6b4a;
+    --accent-light: #e8f5ef;
+    --accent-border: #a8d8be;
+    --tag-ny: #e8e6f8; --tag-ny-t: #3d35a0;
+    --tag-orlando: #fde8df; --tag-orlando-t: #9a3510;
+    --tag-miami: #e8f5ef; --tag-miami-t: #1a6b4a;
+    --tag-docs: #e6f0fb; --tag-docs-t: #1555a0;
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111110;
+      --surface: #1c1c1a;
+      --surface2: #252523;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --text: #f0ede8;
+      --text2: #a0a09a;
+      --text3: #666;
+      --accent: #3ecf8e;
+      --accent-light: #0d2b1e;
+      --accent-border: #1a6b4a;
+      --tag-ny: #1e1a3a; --tag-ny-t: #a89eef;
+      --tag-orlando: #2e1508; --tag-orlando-t: #f5a882;
+      --tag-miami: #0d2b1e; --tag-miami-t: #3ecf8e;
+      --tag-docs: #0d1e38; --tag-docs-t: #7ab8f5;
+    }
+  }
+
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 20px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .header-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+  }
+
+  .header-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .cities {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .city-pill {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    background: var(--surface2);
+  }
+
+  /* PROGRESS */
+  .progress-wrap {
+    margin-top: 14px;
+  }
+
+  .progress-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+
+  .progress-text {
+    font-size: 12px;
+    color: var(--text2);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .progress-pct {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .progress-track {
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+    width: 0%;
+  }
+
+  /* CONTROLS */
+  .controls {
+    display: flex;
+    gap: 6px;
+    padding: 12px 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .controls::-webkit-scrollbar { display: none; }
+
+  .ctrl-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 6px 14px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ctrl-btn:active { transform: scale(0.96); background: var(--surface2); }
+
+  /* CONTENT */
+  .content { padding: 0 16px; }
+
+  /* SECTION */
+  .section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    gap: 10px;
+  }
+
+  .section-header:active { background: var(--surface2); }
+
+  .sec-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sec-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .sec-info { flex: 1; min-width: 0; }
+
+  .sec-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sec-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 2px;
+  }
+
+  .sec-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .sec-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 99px;
+    background: var(--surface2);
+    color: var(--text2);
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .sec-badge.complete {
+    background: var(--accent-light);
+    color: var(--accent);
+    border-color: var(--accent-border);
+  }
+
+  .chevron {
+    color: var(--text3);
+    font-size: 12px;
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    flex-shrink: 0;
+  }
+  .chevron.open { transform: rotate(180deg); }
+
+  /* ITEMS */
+  .items-wrap {
+    display: none;
+    border-top: 1px solid var(--border);
+  }
+  .items-wrap.open { display: block; }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .item:last-child { border-bottom: none; }
+  .item:active { background: var(--surface2); }
+
+  .item-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    border: 1.5px solid var(--border2);
+    background: var(--surface);
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+
+  .item-check.checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .item-check.checked::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 7px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+  }
+
+  .item-body { flex: 1; min-width: 0; }
+
+  .item-text {
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.45;
+    transition: color 0.15s;
+  }
+
+  .item-text.checked {
+    text-decoration: line-through;
+    color: var(--text3);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 5px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .tag-ny { background: var(--tag-ny); color: var(--tag-ny-t); }
+  .tag-orlando { background: var(--tag-orlando); color: var(--tag-orlando-t); }
+  .tag-miami { background: var(--tag-miami); color: var(--tag-miami-t); }
+  .tag-docs { background: var(--tag-docs); color: var(--tag-docs-t); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 24px 20px 12px;
+    font-size: 11px;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Complete animation */
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+  .pop { animation: pop 0.25s ease; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="header-title">✈️ Viagem EUA</div>
+      <div class="header-sub">checklist de preparação</div>
+    </div>
+    <div class="cities">
+      <span class="city-pill">🗽 NY</span>
+      <span class="city-pill">🎢 Orlando</span>
+      <span class="city-pill">🏖️ Miami</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-row">
+      <span class="progress-text" id="prog-text">0 de 0 itens</span>
+      <span class="progress-pct" id="prog-pct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="prog-fill"></div>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">Expandir tudo</button>
+  <button class="ctrl-btn" onclick="collapseAll()">Recolher tudo</button>
+  <button class="ctrl-btn" onclick="clearAll()">Limpar tudo</button>
+</div>
+
+<div class="content" id="content"></div>
+
+<div class="footer">progresso salvo neste dispositivo</div>
+
+<script>
+const STORE_KEY = 'checklist-eua-v1';
+
+const data = [
+  { id: 'docs', icon: '📄', title: 'Documentos essenciais', items: [
+    { text: 'Passaporte (validade mínima 6 meses além da viagem)', tags: ['docs'] },
+    { text: 'Visto americano válido (B1/B2 ou ESTA se aplicável)', tags: ['docs'] },
+    { text: 'Comprovante de reserva de hotel (todas as cidades)', tags: ['docs'] },
+    { text: 'Passagens aéreas impressas ou no celular (ida, volta e domésticas)', tags: ['docs'] },
+    { text: 'Seguro viagem com cobertura médica nos EUA', tags: ['docs'] },
+    { text: 'CNH internacional (se quiser alugar carro)', tags: ['docs'] },
+    { text: 'Cartão de vacinação (COVID/febre amarela conforme exigência)', tags: ['docs'] },
+    { text: 'Cópia digital e física de todos os documentos (salvar em e-mail)', tags: ['docs'] },
+    { text: 'Cartão de crédito/débito internacional com chip e senha', tags: ['docs'] },
+    { text: 'Dólares em espécie (trocos pequenos para gorjetas)', tags: ['docs'] },
+    { text: 'Endereços e telefones de emergência anotados', tags: ['docs'] },
+  ]},
+  { id: 'roupas', icon: '👕', title: 'Roupas e acessórios', items: [
+    { text: 'Camisetas (NY pode ser frio, Orlando e Miami quente)' },
+    { text: 'Calças jeans ou calça leve' },
+    { text: 'Shorts ou bermuda (Orlando e Miami)', tags: ['orlando','miami'] },
+    { text: 'Casaco ou jaqueta (NY e locais com ar condicionado forte)', tags: ['ny'] },
+    { text: 'Agasalho ou moletom' },
+    { text: 'Roupas íntimas e meias suficientes para os dias' },
+    { text: 'Pijama' },
+    { text: 'Roupa de banho (praia em Miami e parques aquáticos)', tags: ['miami','orlando'] },
+    { text: 'Tênis confortável para caminhadas (essencial para NY e parques)', tags: ['ny','orlando'] },
+    { text: 'Chinelo ou sandália' },
+    { text: 'Sapato social (opcional, restaurantes ou shows)' },
+    { text: 'Boné ou chapéu (sol em Orlando e Miami)', tags: ['orlando','miami'] },
+    { text: 'Óculos de sol' },
+    { text: 'Cinto' },
+    { text: 'Roupa para academia (se planejar treinar)' },
+  ]},
+  { id: 'saude', icon: '💊', title: 'Saúde e higiene', items: [
+    { text: 'Protetor solar FPS 50+ (indispensável em Orlando e Miami)', tags: ['orlando','miami'] },
+    { text: 'Repelente' },
+    { text: 'Antialérgico (dipirona, loratadina)' },
+    { text: 'Remédio para dor de cabeça e febre' },
+    { text: 'Medicamentos de uso contínuo (com prescrição traduzida)' },
+    { text: 'Protetor labial com FPS' },
+    { text: 'Band-aids e antisséptico' },
+    { text: 'Remédio para enjoo (avião ou barco)' },
+    { text: 'Escova de dente, pasta, fio dental e enxaguante' },
+    { text: 'Shampoo, condicionador e sabonete (máx 100ml na carry-on)' },
+    { text: 'Desodorante' },
+    { text: 'Hidratante corporal e facial (ar seco de aviões e hotéis)' },
+    { text: 'Maquiagem e itens de beleza necessários' },
+    { text: 'Absorvente ou outros itens de higiene feminina' },
+    { text: 'Preservativo' },
+  ]},
+  { id: 'tech', icon: '🔌', title: 'Tecnologia e eletrônicos', items: [
+    { text: 'Adaptador de tomada (EUA usa plug tipo A/B, 110V)' },
+    { text: 'Smartphone com Google Maps ou Maps offline baixado' },
+    { text: 'Carregador do celular' },
+    { text: 'Powerbank (bateria portátil)' },
+    { text: 'Fone de ouvido (voos e deslocamentos)' },
+    { text: 'Câmera fotográfica ou verificar espaço no celular' },
+    { text: 'Cartão de memória extra e cabo de dados' },
+    { text: 'Notebook ou tablet (se necessário)' },
+    { text: 'Chip internacional ou eSIM com dados nos EUA' },
+    { text: 'Configurar roaming ou desativar dados desnecessários' },
+  ]},
+  { id: 'orlando', icon: '🎢', title: 'Específico — Orlando', items: [
+    { text: 'Ingressos para os parques (Disney, Universal, etc.) baixados no app', tags: ['orlando'] },
+    { text: 'App My Disney Experience ou Universal Orlando instalado', tags: ['orlando'] },
+    { text: 'Bolsa à prova d\'água (Volcano Bay e brinquedos molhados)', tags: ['orlando'] },
+    { text: 'Squeeze ou garrafa d\'água reutilizável', tags: ['orlando'] },
+    { text: 'Calçado fechado e confortável para os parques', tags: ['orlando'] },
+    { text: 'Snacks para os dias nos parques (evita gastar muito dentro)', tags: ['orlando'] },
+  ]},
+  { id: 'ny', icon: '🗽', title: 'Específico — Nova York', items: [
+    { text: 'Layering de roupas (NY tem grande variação de temperatura)', tags: ['ny'] },
+    { text: 'App MTA instalado (metrô de NY)', tags: ['ny'] },
+    { text: 'Pesquisar: Times Square, Central Park, Brooklyn Bridge', tags: ['ny'] },
+    { text: 'Reserva em restaurantes famosos com antecedência', tags: ['ny'] },
+    { text: 'Mochila pequena e segura para o dia (metrô e ruas)', tags: ['ny'] },
+  ]},
+  { id: 'miami', icon: '🏖️', title: 'Específico — Miami', items: [
+    { text: 'Roupa de praia e canga', tags: ['miami'] },
+    { text: 'Protetor solar resistente à água', tags: ['miami'] },
+    { text: 'Sandália de praia', tags: ['miami'] },
+    { text: 'Óculos de sol polarizado', tags: ['miami'] },
+    { text: 'Pesquisar: South Beach, Wynwood Walls, Ocean Drive', tags: ['miami'] },
+  ]},
+  { id: 'mala', icon: '🧳', title: 'Bagagem e organização', items: [
+    { text: 'Mala grande com cadeado TSA (aprovado nos EUA)' },
+    { text: 'Mochila ou carry-on de mão para voo' },
+    { text: 'Bolsa para uso diário (leve, antifurto é um plus)' },
+    { text: 'Organizadores de mala (cubes) para separar roupas' },
+    { text: 'Saco plástico ziplock para líquidos na bagagem de mão' },
+    { text: 'Travesseiro de pescoço para os voos' },
+    { text: 'Máscara de dormir e tampão de ouvido' },
+    { text: 'Etiqueta de identificação na mala com contato local' },
+    { text: 'Laço ou marca especial para identificar a mala na esteira' },
+    { text: 'Espaço reservado na mala para compras (ou mala extra dobrada)' },
+  ]},
+];
+
+const tagLabel = { docs:'docs', ny:'NY', orlando:'Orlando', miami:'Miami' };
+
+let checks = {};
+let open = {};
+
+function load() {
+  try {
+    const saved = localStorage.getItem(STORE_KEY);
+    if (saved) { const d = JSON.parse(saved); checks = d.checks || {}; open = d.open || {}; }
+  } catch(e) {}
+}
+
+function save() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify({ checks, open })); } catch(e) {}
+}
+
+function totalItems() { return data.reduce((s,c) => s + c.items.length, 0); }
+function checkedCount() { return Object.values(checks).filter(Boolean).length; }
+
+function updateProgress() {
+  const total = totalItems();
+  const done = checkedCount();
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = done + ' de ' + total + ' itens';
+  document.getElementById('prog-pct').textContent = pct + '%';
+
+  data.forEach(sec => {
+    const done = sec.items.filter((_,ii) => checks[sec.id+'-'+ii]).length;
+    const badge = document.getElementById('badge-'+sec.id);
+    if (!badge) return;
+    badge.textContent = done + '/' + sec.items.length;
+    badge.className = 'sec-badge' + (done === sec.items.length ? ' complete' : '');
+    const count = document.getElementById('count-'+sec.id);
+    if (count) count.textContent = done + ' de ' + sec.items.length + ' concluídos';
+  });
+}
+
+function toggleItem(secId, ii) {
+  const key = secId + '-' + ii;
+  checks[key] = !checks[key];
+  const box = document.getElementById('box-'+secId+'-'+ii);
+  const lbl = document.getElementById('lbl-'+secId+'-'+ii);
+  if (box) { box.classList.toggle('checked', !!checks[key]); box.classList.add('pop'); setTimeout(() => box.classList.remove('pop'), 260); }
+  if (lbl) lbl.className = 'item-text' + (checks[key] ? ' checked' : '');
+  save(); updateProgress();
+}
+
+function toggleSection(id) {
+  open[id] = !open[id];
+  const wrap = document.getElementById('wrap-'+id);
+  const chev = document.getElementById('chev-'+id);
+  if (wrap) wrap.classList.toggle('open', !!open[id]);
+  if (chev) chev.classList.toggle('open', !!open[id]);
+  save();
+}
+
+function expandAll() {
+  data.forEach(s => { open[s.id] = true; document.getElementById('wrap-'+s.id)?.classList.add('open'); document.getElementById('chev-'+s.id)?.classList.add('open'); });
+  save();
+}
+
+function collapseAll() {
+  data.forEach(s => { open[s.id] = false; document.getElementById('wrap-'+s.id)?.classList.remove('open'); document.getElementById('chev-'+s.id)?.classList.remove('open'); });
+  save();
+}
+
+function clearAll() {
+  if (!confirm('Limpar todos os itens marcados?')) return;
+  checks = {};
+  data.forEach(sec => {
+    sec.items.forEach((_,ii) => {
+      document.getElementById('box-'+sec.id+'-'+ii)?.classList.remove('checked');
+      const lbl = document.getElementById('lbl-'+sec.id+'-'+ii);
+      if (lbl) lbl.className = 'item-text';
+    });
+  });
+  save(); updateProgress();
+}
+
+function render() {
+  const content = document.getElementById('content');
+  content.innerHTML = data.map(sec => {
+    const itemsHtml = sec.items.map((item, ii) => {
+      const isChecked = !!checks[sec.id+'-'+ii];
+      const tagsHtml = (item.tags||[]).map(t => `<span class="tag tag-${t}">${tagLabel[t]||t}</span>`).join('');
+      return `<div class="item" onclick="toggleItem('${sec.id}',${ii})">
+        <div class="item-check${isChecked?' checked':''}" id="box-${sec.id}-${ii}"></div>
+        <div class="item-body">
+          <div class="item-text${isChecked?' checked':''}" id="lbl-${sec.id}-${ii}">${item.text}</div>
+          ${tagsHtml ? `<div class="tags">${tagsHtml}</div>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+
+    const secDone = sec.items.filter((_,ii) => checks[sec.id+'-'+ii]).length;
+    const isOpen = !!open[sec.id];
+
+    return `<div class="section">
+      <div class="section-header" onclick="toggleSection('${sec.id}')">
+        <div class="sec-left">
+          <span class="sec-icon">${sec.icon}</span>
+          <div class="sec-info">
+            <div class="sec-title">${sec.title}</div>
+            <div class="sec-count" id="count-${sec.id}">${secDone} de ${sec.items.length} concluídos</div>
+          </div>
+        </div>
+        <div class="sec-right">
+          <span class="sec-badge${secDone===sec.items.length?' complete':''}" id="badge-${sec.id}">${secDone}/${sec.items.length}</span>
+          <span class="chevron${isOpen?' open':''}" id="chev-${sec.id}">▼</span>
+        </div>
+      </div>
+      <div class="items-wrap${isOpen?' open':''}" id="wrap-${sec.id}">${itemsHtml}</div>
+    </div>`;
+  }).join('');
+
+  updateProgress();
+}
+
+load();
+render();
+</script>
+</body>
+</html>
