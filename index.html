@@ -9,370 +9,94 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg: #f5f3ef;
-    --surface: #ffffff;
-    --surface2: #f0ede8;
-    --border: rgba(0,0,0,0.09);
-    --border2: rgba(0,0,0,0.15);
-    --text: #1a1a1a;
-    --text2: #5a5a5a;
-    --text3: #999;
-    --accent: #1a6b4a;
-    --accent-light: #e8f5ef;
-    --accent-border: #a8d8be;
+    --bg: #f5f3ef; --surface: #ffffff; --surface2: #f0ede8;
+    --border: rgba(0,0,0,0.09); --border2: rgba(0,0,0,0.15);
+    --text: #1a1a1a; --text2: #5a5a5a; --text3: #999;
+    --accent: #1a6b4a; --accent-light: #e8f5ef; --accent-border: #a8d8be;
+    --tip: #fffbeb; --tip-border: #fde68a; --tip-t: #92400e;
     --tag-ny: #e8e6f8; --tag-ny-t: #3d35a0;
     --tag-orlando: #fde8df; --tag-orlando-t: #9a3510;
     --tag-miami: #e8f5ef; --tag-miami-t: #1a6b4a;
     --tag-docs: #e6f0fb; --tag-docs-t: #1555a0;
-    --radius: 14px;
-    --radius-sm: 8px;
+    --tag-dica: #fffbeb; --tag-dica-t: #92400e;
+    --radius: 14px; --radius-sm: 8px;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #111110;
-      --surface: #1c1c1a;
-      --surface2: #252523;
-      --border: rgba(255,255,255,0.08);
-      --border2: rgba(255,255,255,0.14);
-      --text: #f0ede8;
-      --text2: #a0a09a;
-      --text3: #666;
-      --accent: #3ecf8e;
-      --accent-light: #0d2b1e;
-      --accent-border: #1a6b4a;
+      --bg: #111110; --surface: #1c1c1a; --surface2: #252523;
+      --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+      --text: #f0ede8; --text2: #a0a09a; --text3: #666;
+      --accent: #3ecf8e; --accent-light: #0d2b1e; --accent-border: #1a6b4a;
+      --tip: #2a1f00; --tip-border: #78530a; --tip-t: #fcd34d;
       --tag-ny: #1e1a3a; --tag-ny-t: #a89eef;
       --tag-orlando: #2e1508; --tag-orlando-t: #f5a882;
       --tag-miami: #0d2b1e; --tag-miami-t: #3ecf8e;
       --tag-docs: #0d1e38; --tag-docs-t: #7ab8f5;
+      --tag-dica: #2a1f00; --tag-dica-t: #fcd34d;
     }
   }
-
   html { font-size: 16px; -webkit-text-size-adjust: 100%; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding-bottom: 60px;
-  }
-
-  /* HEADER */
-  .header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 20px 20px 16px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .header-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 14px;
-  }
-
-  .header-title {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.4px;
-    line-height: 1.2;
-  }
-
-  .header-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--text2);
-    margin-top: 4px;
-    letter-spacing: 0.02em;
-  }
-
-  .cities {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .city-pill {
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 20px;
-    border: 1px solid var(--border2);
-    color: var(--text2);
-    background: var(--surface2);
-  }
-
-  /* PROGRESS */
-  .progress-wrap {
-    margin-top: 14px;
-  }
-
-  .progress-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 7px;
-  }
-
-  .progress-text {
-    font-size: 12px;
-    color: var(--text2);
-    font-family: 'DM Mono', monospace;
-  }
-
-  .progress-pct {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--accent);
-    font-family: 'DM Mono', monospace;
-  }
-
-  .progress-track {
-    height: 4px;
-    background: var(--surface2);
-    border-radius: 99px;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 99px;
-    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
-    width: 0%;
-  }
-
-  /* CONTROLS */
-  .controls {
-    display: flex;
-    gap: 6px;
-    padding: 12px 20px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+  .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 20px 20px 16px; position: sticky; top: 0; z-index: 100; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+  .header-title { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; line-height: 1.2; }
+  .header-sub { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text2); margin-top: 4px; letter-spacing: 0.02em; }
+  .cities { display: flex; gap: 6px; flex-wrap: wrap; }
+  .city-pill { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--border2); color: var(--text2); background: var(--surface2); }
+  .progress-wrap { margin-top: 14px; }
+  .progress-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+  .progress-text { font-size: 12px; color: var(--text2); font-family: 'DM Mono', monospace; }
+  .progress-pct { font-size: 12px; font-weight: 600; color: var(--accent); font-family: 'DM Mono', monospace; }
+  .progress-track { height: 4px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+  .controls { display: flex; gap: 6px; padding: 12px 20px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .controls::-webkit-scrollbar { display: none; }
-
-  .ctrl-btn {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-    padding: 6px 14px;
-    border-radius: 99px;
-    border: 1px solid var(--border2);
-    background: var(--surface);
-    color: var(--text2);
-    cursor: pointer;
-    transition: all 0.15s;
-    -webkit-tap-highlight-color: transparent;
-  }
+  .ctrl-btn { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; white-space: nowrap; padding: 6px 14px; border-radius: 99px; border: 1px solid var(--border2); background: var(--surface); color: var(--text2); cursor: pointer; transition: all 0.15s; -webkit-tap-highlight-color: transparent; }
   .ctrl-btn:active { transform: scale(0.96); background: var(--surface2); }
-
-  /* CONTENT */
   .content { padding: 0 16px; }
-
-  /* SECTION */
-  .section {
-    background: var(--surface);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    margin-bottom: 10px;
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    gap: 10px;
-  }
-
+  .section { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 10px; overflow: hidden; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; gap: 10px; }
   .section-header:active { background: var(--surface2); }
-
-  .sec-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    min-width: 0;
-  }
-
-  .sec-icon {
-    font-size: 18px;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-
+  .sec-left { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+  .sec-icon { font-size: 18px; flex-shrink: 0; line-height: 1; }
   .sec-info { flex: 1; min-width: 0; }
-
-  .sec-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .sec-count {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--text3);
-    margin-top: 2px;
-  }
-
-  .sec-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-
-  .sec-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 8px;
-    border-radius: 99px;
-    background: var(--surface2);
-    color: var(--text2);
-    border: 1px solid var(--border);
-    transition: all 0.2s;
-  }
-
-  .sec-badge.complete {
-    background: var(--accent-light);
-    color: var(--accent);
-    border-color: var(--accent-border);
-  }
-
-  .chevron {
-    color: var(--text3);
-    font-size: 12px;
-    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
-    flex-shrink: 0;
-  }
+  .sec-title { font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sec-count { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); margin-top: 2px; }
+  .sec-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .sec-badge { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 99px; background: var(--surface2); color: var(--text2); border: 1px solid var(--border); transition: all 0.2s; }
+  .sec-badge.complete { background: var(--accent-light); color: var(--accent); border-color: var(--accent-border); }
+  .chevron { color: var(--text3); font-size: 12px; transition: transform 0.25s cubic-bezier(0.4,0,0.2,1); flex-shrink: 0; }
   .chevron.open { transform: rotate(180deg); }
-
-  /* ITEMS */
-  .items-wrap {
-    display: none;
-    border-top: 1px solid var(--border);
-  }
+  .items-wrap { display: none; border-top: 1px solid var(--border); }
   .items-wrap.open { display: block; }
-
-  .item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 11px 16px;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
+  .item { display: flex; align-items: flex-start; gap: 12px; padding: 11px 16px; border-bottom: 1px solid var(--border); transition: background 0.15s; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .item:last-child { border-bottom: none; }
   .item:active { background: var(--surface2); }
-
-  .item-check {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-    border: 1.5px solid var(--border2);
-    background: var(--surface);
-    flex-shrink: 0;
-    margin-top: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s;
-  }
-
-  .item-check.checked {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-
-  .item-check.checked::after {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 7px;
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: rotate(-45deg) translateY(-1px);
-  }
-
+  .item-check { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--border2); background: var(--surface); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .item-check.checked { background: var(--accent); border-color: var(--accent); }
+  .item-check.checked::after { content: ''; display: block; width: 10px; height: 7px; border-left: 2px solid white; border-bottom: 2px solid white; transform: rotate(-45deg) translateY(-1px); }
   .item-body { flex: 1; min-width: 0; }
-
-  .item-text {
-    font-size: 13.5px;
-    color: var(--text);
-    line-height: 1.45;
-    transition: color 0.15s;
-  }
-
-  .item-text.checked {
-    text-decoration: line-through;
-    color: var(--text3);
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 5px;
-  }
-
-  .tag {
-    font-size: 10px;
-    font-weight: 500;
-    font-family: 'DM Mono', monospace;
-    padding: 2px 7px;
-    border-radius: 4px;
-  }
+  .item-text { font-size: 13.5px; color: var(--text); line-height: 1.45; transition: color 0.15s; }
+  .item-text.checked { text-decoration: line-through; color: var(--text3); }
+  .item-tip { font-size: 11.5px; color: var(--tip-t); background: var(--tip); border: 1px solid var(--tip-border); border-radius: 6px; padding: 5px 8px; margin-top: 5px; line-height: 1.4; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+  .tag { font-size: 10px; font-weight: 500; font-family: 'DM Mono', monospace; padding: 2px 7px; border-radius: 4px; }
   .tag-ny { background: var(--tag-ny); color: var(--tag-ny-t); }
   .tag-orlando { background: var(--tag-orlando); color: var(--tag-orlando-t); }
   .tag-miami { background: var(--tag-miami); color: var(--tag-miami-t); }
   .tag-docs { background: var(--tag-docs); color: var(--tag-docs-t); }
-
-  /* FOOTER */
-  .footer {
-    text-align: center;
-    padding: 24px 20px 12px;
-    font-size: 11px;
-    color: var(--text3);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* Complete animation */
-  @keyframes pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
-  }
+  .footer { text-align: center; padding: 24px 20px 12px; font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; }
+  @keyframes pop { 0%{transform:scale(1)} 50%{transform:scale(1.08)} 100%{transform:scale(1)} }
   .pop { animation: pop 0.25s ease; }
 </style>
 </head>
 <body>
-
 <div class="header">
   <div class="header-top">
     <div>
       <div class="header-title">✈️ Viagem EUA</div>
-      <div class="header-sub">checklist de preparação</div>
+      <div class="header-sub">checklist · família com 2 crianças</div>
     </div>
     <div class="cities">
       <span class="city-pill">🗽 NY</span>
@@ -385,137 +109,205 @@
       <span class="progress-text" id="prog-text">0 de 0 itens</span>
       <span class="progress-pct" id="prog-pct">0%</span>
     </div>
-    <div class="progress-track">
-      <div class="progress-fill" id="prog-fill"></div>
-    </div>
+    <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
   </div>
 </div>
-
 <div class="controls">
   <button class="ctrl-btn" onclick="expandAll()">Expandir tudo</button>
   <button class="ctrl-btn" onclick="collapseAll()">Recolher tudo</button>
   <button class="ctrl-btn" onclick="clearAll()">Limpar tudo</button>
 </div>
-
 <div class="content" id="content"></div>
-
 <div class="footer">progresso salvo neste dispositivo</div>
-
 <script>
-const STORE_KEY = 'checklist-eua-v1';
-
+const STORE_KEY = 'checklist-eua-v3';
 const data = [
-  { id: 'docs', icon: '📄', title: 'Documentos essenciais', items: [
-    { text: 'Passaporte (validade mínima 6 meses além da viagem)', tags: ['docs'] },
-    { text: 'Visto americano válido (B1/B2 ou ESTA se aplicável)', tags: ['docs'] },
-    { text: 'Comprovante de reserva de hotel (todas as cidades)', tags: ['docs'] },
-    { text: 'Passagens aéreas impressas ou no celular (ida, volta e domésticas)', tags: ['docs'] },
-    { text: 'Seguro viagem com cobertura médica nos EUA', tags: ['docs'] },
-    { text: 'CNH internacional (se quiser alugar carro)', tags: ['docs'] },
-    { text: 'Cartão de vacinação (COVID/febre amarela conforme exigência)', tags: ['docs'] },
-    { text: 'Cópia digital e física de todos os documentos (salvar em e-mail)', tags: ['docs'] },
-    { text: 'Cartão de crédito/débito internacional com chip e senha', tags: ['docs'] },
-    { text: 'Dólares em espécie (trocos pequenos para gorjetas)', tags: ['docs'] },
-    { text: 'Endereços e telefones de emergência anotados', tags: ['docs'] },
+  { id: 'docs', icon: '📄', title: 'Documentos — adultos e crianças', items: [
+    { text: 'Passaporte de TODOS válido por pelo menos 6 meses além da data de retorno', tags: ['docs'], tip: 'Os EUA exigem validade além da estadia. Brasileiros têm isenção da regra dos 6 meses mas para evitar problemas em conexões, garanta 6 meses de sobra.' },
+    { text: 'Visto americano B1/B2 de TODOS — inclusive bebê de 1 ano (sem exceção)', tags: ['docs'], tip: 'Desde set/2025 TODAS as idades precisam de entrevista presencial no consulado. Custo: US$ 185 por pessoa. Agende com antecedência — filas podem levar meses.' },
+    { text: 'Certidão de nascimento das crianças (original + cópia)', tags: ['docs'] },
+    { text: 'Ambos os pais viajando juntos: nenhuma autorização adicional é necessária', tags: ['docs'], tip: 'Se apenas UM dos pais for, o outro precisa assinar Autorização de Viagem de Menor reconhecida em cartório. Viajando os dois, este item já está resolvido.' },
+    { text: 'Comprovante de reserva de hotel com endereços de TODAS as cidades', tags: ['docs'], tip: 'Na imigração americana perguntam o endereço onde você ficará. Tenha impresso ou facilmente acessível no celular.' },
+    { text: 'Passagens aéreas (ida, volta e voos domésticos entre cidades)', tags: ['docs'] },
+    { text: 'Seguro viagem com cobertura médica nos EUA para toda a família', tags: ['docs'], tip: 'Uma consulta médica nos EUA pode custar US$ 500+. Para bebê e criança pequena, cobertura de pelo menos US$ 50.000 é recomendada.' },
+    { text: 'CNH internacional (obrigatória para alugar carro — cadeirinha é lei nos EUA)', tags: ['docs'] },
+    { text: 'Cópia digital de todos os documentos salva no e-mail e na nuvem', tags: ['docs'] },
+    { text: 'Cartão de crédito/débito internacional com chip e senha (2 cartões se possível)', tags: ['docs'], tip: 'Conta Nomad ou Wise: sem IOF e com cotação do dólar comercial — economizam 6,38% em cada compra vs cartão nacional.' },
+    { text: 'Dólares em espécie para gorjetas (US$ 1–5 por serviço é padrão nos EUA)', tags: ['docs'] },
+    { text: 'Endereços dos hospitais/urgências próximos aos hotéis de cada cidade', tags: ['docs'] },
+    { text: 'Comprovante de vínculos com o Brasil (holerite, matrícula escolar das crianças)', tags: ['docs'], tip: 'O agente de imigração pode perguntar sobre seus motivos de retorno ao Brasil. Ter comprovantes ajuda a demonstrar vínculos.' },
   ]},
   { id: 'roupas', icon: '👕', title: 'Roupas e acessórios', items: [
-    { text: 'Camisetas (NY pode ser frio, Orlando e Miami quente)' },
+    { text: 'Camisetas em quantidade suficiente (NY pode ser frio, Orlando e Miami quente)' },
     { text: 'Calças jeans ou calça leve' },
     { text: 'Shorts ou bermuda (Orlando e Miami)', tags: ['orlando','miami'] },
-    { text: 'Casaco ou jaqueta (NY e locais com ar condicionado forte)', tags: ['ny'] },
-    { text: 'Agasalho ou moletom' },
-    { text: 'Roupas íntimas e meias suficientes para os dias' },
-    { text: 'Pijama' },
-    { text: 'Roupa de banho (praia em Miami e parques aquáticos)', tags: ['miami','orlando'] },
-    { text: 'Tênis confortável para caminhadas (essencial para NY e parques)', tags: ['ny','orlando'] },
+    { text: 'Casaco ou jaqueta para NY e ar condicionado forte de shoppings e restaurantes', tags: ['ny'] },
+    { text: 'Agasalho ou moletom leve' },
+    { text: 'Roupas íntimas e meias — quantidade para todos os dias sem precisar lavar' },
+    { text: 'Pijamas' },
+    { text: 'Roupa de banho — pelo menos 2 por pessoa (parques aquáticos + praia)', tags: ['miami','orlando'] },
+    { text: 'Tênis confortável para caminhadas longas (parques exigem 15.000+ passos/dia)', tags: ['ny','orlando'] },
     { text: 'Chinelo ou sandália' },
-    { text: 'Sapato social (opcional, restaurantes ou shows)' },
-    { text: 'Boné ou chapéu (sol em Orlando e Miami)', tags: ['orlando','miami'] },
+    { text: 'Sapato social leve (opcional — restaurantes bons ou Broadway em NY)', tags: ['ny'] },
+    { text: 'Boné ou chapéu para o sol intenso de Orlando e Miami', tags: ['orlando','miami'] },
     { text: 'Óculos de sol' },
-    { text: 'Cinto' },
-    { text: 'Roupa para academia (se planejar treinar)' },
+    { text: 'Roupa para academia (se planejar treinar nos hotéis)' },
   ]},
   { id: 'saude', icon: '💊', title: 'Saúde e higiene', items: [
-    { text: 'Protetor solar FPS 50+ (indispensável em Orlando e Miami)', tags: ['orlando','miami'] },
+    { text: 'Protetor solar FPS 50+ para todos (indispensável em Orlando e Miami)', tags: ['orlando','miami'], tip: 'Nos EUA o protetor solar é muito mais caro. Leve da quantidade suficiente do Brasil.' },
     { text: 'Repelente' },
-    { text: 'Antialérgico (dipirona, loratadina)' },
-    { text: 'Remédio para dor de cabeça e febre' },
-    { text: 'Medicamentos de uso contínuo (com prescrição traduzida)' },
+    { text: 'Antialérgico adulto e infantil (dipirona, loratadina)' },
+    { text: 'Termômetro digital' },
+    { text: 'Medicamentos de uso contínuo com receita médica traduzida para inglês' },
     { text: 'Protetor labial com FPS' },
-    { text: 'Band-aids e antisséptico' },
-    { text: 'Remédio para enjoo (avião ou barco)' },
-    { text: 'Escova de dente, pasta, fio dental e enxaguante' },
+    { text: 'Kit pronto-socorro: band-aids, antisséptico, gaze' },
+    { text: 'Remédio para enjoo adulto e infantil (consultar pediatra para crianças)' },
+    { text: 'Escova de dente, pasta, fio dental e enxaguante para todos' },
     { text: 'Shampoo, condicionador e sabonete (máx 100ml na carry-on)' },
     { text: 'Desodorante' },
-    { text: 'Hidratante corporal e facial (ar seco de aviões e hotéis)' },
+    { text: 'Hidratante (ar seco de aviões e ar condicionado resseca muito a pele)' },
     { text: 'Maquiagem e itens de beleza necessários' },
     { text: 'Absorvente ou outros itens de higiene feminina' },
-    { text: 'Preservativo' },
   ]},
   { id: 'tech', icon: '🔌', title: 'Tecnologia e eletrônicos', items: [
-    { text: 'Adaptador de tomada (EUA usa plug tipo A/B, 110V)' },
-    { text: 'Smartphone com Google Maps ou Maps offline baixado' },
-    { text: 'Carregador do celular' },
-    { text: 'Powerbank (bateria portátil)' },
-    { text: 'Fone de ouvido (voos e deslocamentos)' },
-    { text: 'Câmera fotográfica ou verificar espaço no celular' },
-    { text: 'Cartão de memória extra e cabo de dados' },
-    { text: 'Notebook ou tablet (se necessário)' },
-    { text: 'Chip internacional ou eSIM com dados nos EUA' },
-    { text: 'Configurar roaming ou desativar dados desnecessários' },
+    { text: 'Adaptador de tomada tipo A/B (EUA usa 2 pinos chatos, 110V)', tip: 'Compre um adaptador universal antes — nos aeroportos é bem mais caro.' },
+    { text: 'Smartphone com Google Maps e apps dos parques baixados' },
+    { text: 'Carregadores de todos os aparelhos' },
+    { text: 'Powerbank de boa capacidade (10.000mAh+) — dias de parque drenam a bateria', tip: 'No Magic Kingdom o app Disney exige bateria o dia todo para Lightning Lane. Powerbank é essencial.' },
+    { text: 'Fone de ouvido (voos longos com crianças — salva a sanidade)' },
+    { text: 'Câmera fotográfica ou verificar espaço de armazenamento no celular' },
+    { text: 'Cartão de memória extra' },
+    { text: 'Notebook ou tablet (conteúdo offline para crianças no hotel à noite)' },
+    { text: 'Chip internacional ou eSIM com dados nos EUA para todos os celulares', tip: 'eSIM é mais prático — não precisa trocar chip físico. Pesquise Holafly, Airalo ou Maya Mobile antes de viajar.' },
   ]},
-  { id: 'orlando', icon: '🎢', title: 'Específico — Orlando', items: [
-    { text: 'Ingressos para os parques (Disney, Universal, etc.) baixados no app', tags: ['orlando'] },
-    { text: 'App My Disney Experience ou Universal Orlando instalado', tags: ['orlando'] },
-    { text: 'Bolsa à prova d\'água (Volcano Bay e brinquedos molhados)', tags: ['orlando'] },
-    { text: 'Squeeze ou garrafa d\'água reutilizável', tags: ['orlando'] },
-    { text: 'Calçado fechado e confortável para os parques', tags: ['orlando'] },
-    { text: 'Snacks para os dias nos parques (evita gastar muito dentro)', tags: ['orlando'] },
+  { id: 'bebe', icon: '🍼', title: 'Bebê (1 ano)', items: [
+    { text: 'Fraldas — estoque generoso (levar para os primeiros dias; depois compra no Target/Walmart)', tip: 'Fraldas Pampers e Huggies são fáceis de encontrar nos EUA. Mas leve pelo menos 3 dias de estoque.' },
+    { text: 'Lenços umedecidos — vários pacotes' },
+    { text: 'Pomada para assadura (Bepantol ou similar)' },
+    { text: 'Leite em pó ou fórmula suficiente para a viagem', tip: 'Marcas brasileiras podem não ter equivalente nos EUA. Leve a quantidade necessária para toda a viagem.' },
+    { text: 'Mamadeiras e copinhos de transição' },
+    { text: 'Chupeta (leve 2 extras — fácil de perder)' },
+    { text: 'Papinhas prontas em sachê para o avião e primeiros dias' },
+    { text: 'Babador e colher de bebê' },
+    { text: 'Roupas extras — mínimo 2 trocas por dia (macacão, body, pijama)' },
+    { text: 'Body de manga longa para o ar condicionado do avião e hotéis' },
+    { text: 'Cobertor leve para o voo' },
+    { text: 'Carrinho de bebê dobrável leve (ideal para parques e aeroportos)', tip: 'Disney e Universal têm estacionamento de carrinhos na entrada das atrações. Carrinho leve dobra/cabe fácil no avião.' },
+    { text: 'Cadeirinha de carro aprovada para voo — obrigatória por lei ao alugar carro nos EUA', tip: 'Algumas locadoras alugam cadeirinha (US$ 10–15/dia) mas disponibilidade é incerta. Levar a sua é mais seguro.' },
+    { text: 'Mochila canguru ou sling (útil nos parques quando o carrinho não entra)' },
+    { text: 'Termômetro digital' },
+    { text: 'Dipirona gotas + ibuprofeno infantil (com receita médica traduzida para inglês)' },
+    { text: 'Antialérgico infantil em gotas' },
+    { text: 'Soro fisiológico para limpeza nasal (ar condicionado resseca muito)' },
+    { text: 'Protetor solar mineral/físico específico para bebê FPS 50+' },
+    { text: 'Brinquedos favoritos + mordedor para o avião' },
+    { text: 'Monitor de bebê portátil para os hotéis' },
+    { text: 'Protetor de tomada (tomadas americanas ficam acessíveis para bebês)', tip: 'Leve pelo menos 4–6 protetores. Hotéis americanos têm muitas tomadas e bebês são curiosos.' },
   ]},
-  { id: 'ny', icon: '🗽', title: 'Específico — Nova York', items: [
-    { text: 'Layering de roupas (NY tem grande variação de temperatura)', tags: ['ny'] },
-    { text: 'App MTA instalado (metrô de NY)', tags: ['ny'] },
-    { text: 'Pesquisar: Times Square, Central Park, Brooklyn Bridge', tags: ['ny'] },
-    { text: 'Reserva em restaurantes famosos com antecedência', tags: ['ny'] },
-    { text: 'Mochila pequena e segura para o dia (metrô e ruas)', tags: ['ny'] },
+  { id: 'crianca5', icon: '🧒', title: 'Criança (5 anos)', items: [
+    { text: 'Passaporte e visto americano próprios (processo igual ao de adulto)' },
+    { text: 'Roupas confortáveis com velcro/elástico — fáceis de vestir sem ajuda' },
+    { text: 'Tênis com bom amortecimento para os dias de parque (15.000+ passos)', tip: 'Parques da Disney e Universal são enormes. Um tênis inadequado vai resultar em criança no colo. Teste o tênis antes de viajar.' },
+    { text: 'Sandália leve para Miami e passeios mais curtos' },
+    { text: 'Roupa de banho + protetor solar infantil FPS 50+', tags: ['orlando','miami'] },
+    { text: 'Boné ou chapéu para o sol', tags: ['orlando','miami'] },
+    { text: 'Óculos de sol infantil' },
+    { text: 'Mochilinha própria com nome e contato gravado/bordado', tip: 'Nos parques, se a criança se perder, deve ser orientada a procurar um funcionário (Cast Member) — eles são treinados para isso.' },
+    { text: 'Pulseirinha de identificação com número de celular internacional' },
+    { text: 'Snacks favoritos para filas e deslocamentos (barra de cereal, fruta seca)' },
+    { text: 'Tablet ou celular com filmes e jogos baixados offline para o voo' },
+    { text: 'Fone de ouvido infantil com limitador de volume' },
+    { text: 'Travesseirinho de pescoço para o voo' },
+    { text: 'Remédio para enjoo infantil — consultar pediatra antes de comprar' },
+    { text: 'Antitérmico infantil (dipirona ou ibuprofeno na dose certa para a idade)' },
+    { text: 'Band-aids infantis (com personagem — anima na hora do machucado)' },
+    { text: 'Brinquedos pequenos e livrinhos para o avião e esperas' },
+    { text: 'Verificar altura mínima das atrações na Disney/Universal com antecedência', tags: ['orlando'], tip: 'Muitas atrações exigem 97cm+ ou 107cm+. Prepare a criança emocionalmente caso não atinja a altura de alguma atração favorita.' },
+    { text: 'Conversar com a criança sobre regras de segurança nos parques (não sair do adulto)', tags: ['orlando'] },
   ]},
-  { id: 'miami', icon: '🏖️', title: 'Específico — Miami', items: [
-    { text: 'Roupa de praia e canga', tags: ['miami'] },
-    { text: 'Protetor solar resistente à água', tags: ['miami'] },
-    { text: 'Sandália de praia', tags: ['miami'] },
+  { id: 'parques', icon: '🏰', title: 'Planejamento dos parques — Orlando', items: [
+    { text: 'Comprar TODOS os ingressos no Brasil, antes de viajar (muito mais barato)', tags: ['orlando'], tip: 'Comprar em reais com agências brasileiras evita 6,38% de IOF. Além disso, dá para parcelar. Nunca compre ingressos de terceiros no Marketplace — golpes são comuns.' },
+    { text: 'Verificar promoção 4-Park Magic Disney 2026: 4 parques pelo preço de 3', tags: ['orlando'], tip: 'Promoção válida jan–mai 2026. Economiza o valor de um parque inteiro por pessoa.' },
+    { text: 'Baixar o app My Disney Experience e vincular todos os ingressos antes de sair', tags: ['orlando'], tip: 'Sem o app vinculado você não consegue usar o Lightning Lane nem ver tempos de fila.' },
+    { text: 'Baixar o app Universal Orlando e vincular ingressos', tags: ['orlando'] },
+    { text: 'Entender o sistema Lightning Lane da Disney (substituiu o Genie+ em 2024)', tags: ['orlando'], tip: 'Multi Pass: reserva várias atrações (uma por vez). Single Pass: fura-fila individual para atrações top (ex: Tron, Guardians). Preço dinâmico — mais caro em dias cheios.' },
+    { text: 'Planejar chegar 45–60 min antes da abertura do parque todo dia', tags: ['orlando'], tip: 'A primeira hora do parque tem filas 3–5x menores. Com bebê e criança de 5 anos, essa estratégia substitui o Lightning Lane em boa parte das atrações.' },
+    { text: 'Identificar as atrações principais e verificar altura mínima exigida', tags: ['orlando'], tip: 'Tron Lightcycle (Magic Kingdom): 107cm. Splash Mountain/Tiana: 97cm. Space Mountain: 112cm. A criança de 5 anos provavelmente não atingirá algumas — planeje alternativas.' },
+    { text: 'Reservar restaurantes na Disney com até 60 dias de antecedência', tags: ['orlando'], tip: 'Restaurantes Be Our Guest, Cinderella Royal Table e Character Dining esgotam meses antes. Reserve assim que os ingressos forem comprados.' },
+    { text: 'Considerar hospedagem dentro da Disney para acesso antecipado (Early Entry)', tags: ['orlando'], tip: 'Hóspedes de hotéis Disney entram 30 min antes dos parques abrirem — ouro para famílias com crianças pequenas. Estacionamento gratuito também.' },
+    { text: 'Planejar os dias de parque de acordo com o calendário de lotação', tags: ['orlando'], tip: 'Terças e quartas costumam ser os dias mais vazios. Finais de semana são os mais cheios. Evite feriados americanos (Memorial Day, 4 de julho).' },
+    { text: 'Levar comida e bebida para os parques (garrafinhas e snacks permitidos)', tags: ['orlando'], tip: 'Comida dentro dos parques custa US$ 15–25 por prato. Levar snacks e refeições simples economiza facilmente US$ 50–100 por dia para a família.' },
+    { text: 'Usar as filas virtuais gratuitas (Virtual Queue) quando disponíveis', tags: ['orlando'], tip: 'Algumas atrações como Guardians of the Galaxy: Cosmic Rewind usam fila virtual gratuita. Reserve assim que o parque abre — esgota em minutos.' },
+    { text: 'Aplicar protetor solar nas crianças a cada 2h dentro dos parques', tags: ['orlando'] },
+    { text: 'Levar poncho de chuva leve descartável (chove quase todo dia à tarde em Orlando)', tags: ['orlando'], tip: 'Ponchos dentro dos parques custam US$ 10–15 por pessoa. Compre no Brasil por menos de R$ 5 cada.' },
+    { text: 'Universal Express Pass: vale muito para dias cheios na Universal/Islands', tags: ['orlando'], tip: 'Universal Express Pass cobre a maioria das atrações com fila rápida. Hóspedes de hotéis premium da Universal têm acesso gratuito — pode compensar o custo maior do hotel.' },
+    { text: 'SeaWorld/Busch Gardens: pesquisar combos com desconto (costumam ser mais baratos)', tags: ['orlando'] },
+    { text: 'Verificar horários dos desfiles e shows e planejar para aproveitá-los', tags: ['orlando'], tip: 'Festival of Fantasy (Magic Kingdom) e shows noturnos são gratuitos com o ingresso. Posicione-se 30–45 min antes para bom lugar com crianças.' },
+    { text: 'Usar o Rider Switch (troca de tutor) nas atrações que o bebê não pode entrar', tags: ['orlando'], tip: 'Rider Switch permite que um adulto espere com o bebê enquanto o outro entra. Depois trocam sem esperar a fila novamente. Gratuito — peça ao Cast Member.' },
+  ]},
+  { id: 'ny', icon: '🗽', title: 'Nova York — checklist e dicas', items: [
+    { text: 'Layering de roupas — temperatura pode variar 15°C no mesmo dia em NY', tags: ['ny'] },
+    { text: 'Baixar app MTA (metrô) ou Google Maps modo trânsito', tags: ['ny'], tip: 'Metrô de NY vai a quase todo lugar e é muito mais rápido que táxi no trânsito. Compre um MetroCard recarregável no aeroporto.' },
+    { text: 'Pesquisar e reservar: Top of the Rock, High Line, Central Park, Brooklyn Bridge', tags: ['ny'], tip: 'Top of the Rock (Rockefeller) tem vista melhor que o Empire State para a maioria das pessoas, e costuma ter fila menor. Reserve online para economizar.' },
+    { text: 'CityPASS ou New York Pass: vale a pena se visitar 4+ atrações', tags: ['ny'], tip: 'O NYC CityPASS dá acesso a 6 atrações top com até 40% de desconto. Calcule antes com base no seu roteiro.' },
+    { text: 'Evitar táxi amarelo — usar Uber/Lyft é mais barato e sem negociação', tags: ['ny'] },
+    { text: 'Comer em food trucks, mercados (Chelsea Market, Eataly) e delis — muito mais barato', tags: ['ny'], tip: 'Um almoço em restaurante em NY facilmente custa US$ 20–40 por pessoa. Food trucks e delis custam US$ 10–15 e costumam ser excelentes.' },
+    { text: 'Ir cedo ao Central Park para passeio com as crianças (menos lotado de manhã)', tags: ['ny'] },
+    { text: 'Reservar restaurantes bons com antecedência — NY esgota com facilidade', tags: ['ny'] },
+    { text: 'Atenção com o carrinho do bebê no metrô — nem todas as estações têm elevador', tags: ['ny'], tip: 'Pesquise antes quais estações do seu trajeto têm elevador (ADA accessible). O site do MTA tem mapa. Alternativamente, use Uber/Lyft para trajetos curtos.' },
+    { text: 'Mochila pequena antifurto para o dia — evitar bolsas abertas no metrô', tags: ['ny'] },
+    { text: 'Comprar lembrança e roupas em bairros fora de Times Square (50% mais barato)', tags: ['ny'], tip: 'TJ Maxx, Marshalls e Century 21 têm roupas de marca com grande desconto. Evite lojas de souvenir em Times Square — preços absurdos.' },
+  ]},
+  { id: 'miami', icon: '🏖️', title: 'Miami — checklist e dicas', items: [
+    { text: 'Roupa de praia e canga para toda a família', tags: ['miami'] },
+    { text: 'Protetor solar resistente à água — reaplicar a cada 2h na praia', tags: ['miami'] },
+    { text: 'Sandália de praia (areia de South Beach fica extremamente quente no verão)', tags: ['miami'] },
     { text: 'Óculos de sol polarizado', tags: ['miami'] },
-    { text: 'Pesquisar: South Beach, Wynwood Walls, Ocean Drive', tags: ['miami'] },
+    { text: 'Barraca de praia portátil para dar sombra ao bebê', tags: ['miami'], tip: 'Sol de Miami entre 10h–15h é muito intenso para bebê. Uma barraquinha portátil (pop-up beach tent) pesa pouco e protege muito.' },
+    { text: 'Passeios gratuitos: South Beach (pé na areia), Wynwood Walls, Bayside Marketplace', tags: ['miami'], tip: 'Wynwood Walls é museu de street art ao ar livre — gratuito por fora, pago por dentro. Vale a caminhada pelo bairro mesmo sem pagar.' },
+    { text: 'Aluguel de carro em Miami — facilita muito os deslocamentos', tags: ['miami'], tip: 'Miami tem transporte público ruim. Com crianças, carro alugado é praticamente obrigatório. Reserve com antecedência pelo Rentalcars ou Kayak.' },
+    { text: 'Evitar South Beach na hora do almoço — extremamente quente e lotado', tags: ['miami'] },
+    { text: 'Supermercado Publix ou Walmart para estocar água, snacks e fraldas', tags: ['miami'], tip: 'Conveniências de hotel cobram 3–4x mais. Um Publix ou Walmart próximo ao hotel economiza muito ao longo da viagem.' },
+    { text: 'Little Havana: almoço cubano barato e autêntico (Calle Ocho)', tags: ['miami'], tip: 'Versión Original ou Versailles são ótimas opções — refeição completa por US$ 12–18. Bem mais em conta que restaurantes de South Beach.' },
+  ]},
+  { id: 'economia', icon: '💰', title: 'Dicas gerais de economia e tempo', items: [
+    { text: 'Usar conta Nomad ou Wise para todas as compras nos EUA (sem IOF de 6,38%)', tip: 'Em uma viagem de US$ 5.000 em gastos, a diferença é de R$ 1.800+ só de IOF evitado.' },
+    { text: 'Levar snacks e garrafinhas de água de casa todos os dias (shoppings têm bebedouros)', tip: 'Água dentro de parques e atrações custa US$ 4–6 a garrafa. Garrafinha reutilizável se paga no primeiro dia.' },
+    { text: 'Fazer compras de roupas e produtos nos outlets (Premium Outlets em Orlando)', tip: 'Orlando Premium Outlets e Vineland Outlets têm Nike, Gap, Tommy, Coach com 30–60% de desconto. Melhor que comprar no Brasil.' },
+    { text: 'Baixar o app Honey ou Rakuten para cashback em compras online antes de viajar' },
+    { text: 'Verificar se o cartão de crédito tem seguro viagem e proteção de compras embutidos', tip: 'Alguns cartões premium (Visa Infinite, Mastercard Black) já incluem seguro viagem. Se o seu tiver, pode economizar R$ 500–1.500 no seguro adicional.' },
+    { text: 'Pesquisar happy hours em restaurantes (16h–18h) — drinks pela metade do preço' },
+    { text: 'Crianças menores de 3 anos entram GRÁTIS na Disney e Universal', tip: 'Seu bebê de 1 ano não paga ingresso em nenhum parque dos EUA. Aproveite!' },
+    { text: 'Voos domésticos: reservar com 3–4 meses de antecedência para melhores preços', tip: 'Voos NY–Orlando ou Orlando–Miami costumam ser US$ 60–120 por pessoa se comprados com antecedência. Em cima da hora podem passar de US$ 300.' },
+    { text: 'Hotel fora de Times Square em NY — mesma qualidade por 30–40% menos', tip: 'Bairros como Midtown East, Hell\'s Kitchen ou Upper West Side ficam 10–15 min de metrô de Times Square e têm hotéis muito mais acessíveis.' },
+    { text: 'Usar Google Flights com modo "explorar datas" para encontrar os dias mais baratos' },
+    { text: 'Programar visitas a museus em dias gratuitos (MoMA às sextas à noite, etc.)', tags: ['ny'], tip: 'MoMA é gratuito sextas após 17h30. Museum of Natural History tem valor sugerido (você paga quanto quiser). Economiza US$ 25–35 por adulto.' },
+    { text: 'Airbnb com cozinha: cozinhar café da manhã e pelo menos 1 refeição/dia economiza muito', tip: 'Uma família de 4 gastando US$ 60/dia em refeições vs US$ 150 representa US$ 90/dia de economia — mais de R$ 2.700 em 15 dias de viagem.' },
   ]},
   { id: 'mala', icon: '🧳', title: 'Bagagem e organização', items: [
-    { text: 'Mala grande com cadeado TSA (aprovado nos EUA)' },
-    { text: 'Mochila ou carry-on de mão para voo' },
-    { text: 'Bolsa para uso diário (leve, antifurto é um plus)' },
-    { text: 'Organizadores de mala (cubes) para separar roupas' },
-    { text: 'Saco plástico ziplock para líquidos na bagagem de mão' },
-    { text: 'Travesseiro de pescoço para os voos' },
+    { text: 'Mala grande com cadeado TSA (único aceito pelas autoridades americanas)', tip: 'Cadeado sem TSA pode ser arrombado pela TSA durante inspeção. Com cadeado TSA eles abrem e fecham sem danificar.' },
+    { text: 'Mochila ou carry-on de mão para o voo (medicamentos, documentos, eletrônicos)' },
+    { text: 'Bolsa dia leve e antifurto para passeios' },
+    { text: 'Organizadores de mala (cubes) — separe por pessoa ou por tipo de roupa' },
+    { text: 'Saco plástico ziplock para líquidos na bagagem de mão (máx 100ml cada)' },
+    { text: 'Travesseiro de pescoço para adultos e crianças nos voos' },
     { text: 'Máscara de dormir e tampão de ouvido' },
-    { text: 'Etiqueta de identificação na mala com contato local' },
-    { text: 'Laço ou marca especial para identificar a mala na esteira' },
-    { text: 'Espaço reservado na mala para compras (ou mala extra dobrada)' },
+    { text: 'Etiqueta de identificação em TODAS as malas com nome e contato local' },
+    { text: 'Marca ou laço especial para identificar a mala na esteira (evita confusão)' },
+    { text: 'Reservar espaço vazio para compras — ou levar uma mala extra dobrada', tip: 'Mala extra comprada nos EUA (TJ Maxx, Walmart) pode sair mais barato que despachar mala extra na companhia aérea.' },
   ]},
 ];
 
 const tagLabel = { docs:'docs', ny:'NY', orlando:'Orlando', miami:'Miami' };
-
 let checks = {};
 let open = {};
 
 function load() {
-  try {
-    const saved = localStorage.getItem(STORE_KEY);
-    if (saved) { const d = JSON.parse(saved); checks = d.checks || {}; open = d.open || {}; }
-  } catch(e) {}
+  try { const saved = localStorage.getItem(STORE_KEY); if (saved) { const d = JSON.parse(saved); checks = d.checks || {}; open = d.open || {}; } } catch(e) {}
 }
-
 function save() {
   try { localStorage.setItem(STORE_KEY, JSON.stringify({ checks, open })); } catch(e) {}
 }
-
 function totalItems() { return data.reduce((s,c) => s + c.items.length, 0); }
 function checkedCount() { return Object.values(checks).filter(Boolean).length; }
 
@@ -526,7 +318,6 @@ function updateProgress() {
   document.getElementById('prog-fill').style.width = pct + '%';
   document.getElementById('prog-text').textContent = done + ' de ' + total + ' itens';
   document.getElementById('prog-pct').textContent = pct + '%';
-
   data.forEach(sec => {
     const done = sec.items.filter((_,ii) => checks[sec.id+'-'+ii]).length;
     const badge = document.getElementById('badge-'+sec.id);
@@ -561,12 +352,10 @@ function expandAll() {
   data.forEach(s => { open[s.id] = true; document.getElementById('wrap-'+s.id)?.classList.add('open'); document.getElementById('chev-'+s.id)?.classList.add('open'); });
   save();
 }
-
 function collapseAll() {
   data.forEach(s => { open[s.id] = false; document.getElementById('wrap-'+s.id)?.classList.remove('open'); document.getElementById('chev-'+s.id)?.classList.remove('open'); });
   save();
 }
-
 function clearAll() {
   if (!confirm('Limpar todos os itens marcados?')) return;
   checks = {};
@@ -586,18 +375,18 @@ function render() {
     const itemsHtml = sec.items.map((item, ii) => {
       const isChecked = !!checks[sec.id+'-'+ii];
       const tagsHtml = (item.tags||[]).map(t => `<span class="tag tag-${t}">${tagLabel[t]||t}</span>`).join('');
+      const tipHtml = item.tip ? `<div class="item-tip">💡 ${item.tip}</div>` : '';
       return `<div class="item" onclick="toggleItem('${sec.id}',${ii})">
         <div class="item-check${isChecked?' checked':''}" id="box-${sec.id}-${ii}"></div>
         <div class="item-body">
           <div class="item-text${isChecked?' checked':''}" id="lbl-${sec.id}-${ii}">${item.text}</div>
           ${tagsHtml ? `<div class="tags">${tagsHtml}</div>` : ''}
+          ${tipHtml}
         </div>
       </div>`;
     }).join('');
-
     const secDone = sec.items.filter((_,ii) => checks[sec.id+'-'+ii]).length;
     const isOpen = !!open[sec.id];
-
     return `<div class="section">
       <div class="section-header" onclick="toggleSection('${sec.id}')">
         <div class="sec-left">
@@ -615,7 +404,6 @@ function render() {
       <div class="items-wrap${isOpen?' open':''}" id="wrap-${sec.id}">${itemsHtml}</div>
     </div>`;
   }).join('');
-
   updateProgress();
 }
 
