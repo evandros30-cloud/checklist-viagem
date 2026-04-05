@@ -2,690 +2,772 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0a0a">
-<title>Viagem EUA — Roteiro + Checklist ✈️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#06090f">
+<title>Viagem EUA &middot; Abril 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f5f3ef;--surface:#fff;--surface2:#f0ede8;
-  --border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.15);
-  --text:#1a1a1a;--text2:#5a5a5a;--text3:#999;
-  --accent:#1a6b4a;--accent-light:#e8f5ef;--accent-border:#a8d8be;
-  --tip:#fffbeb;--tip-border:#fde68a;--tip-t:#92400e;
-  --tag-ny:#e8e6f8;--tag-ny-t:#3d35a0;
-  --tag-orlando:#fde8df;--tag-orlando-t:#9a3510;
-  --tag-miami:#e8f5ef;--tag-miami-t:#1a6b4a;
-  --tag-docs:#e6f0fb;--tag-docs-t:#1555a0;
-  --cal-today:#1a6b4a;--cal-event:#e8f5ef;--cal-event-t:#1a6b4a;
-  --radius:14px;
+  --night:#06090f;--navy:#0a1020;--navy2:#101828;
+  --sky:#2563b8;--sky2:#3b82f6;--skylt:#dbeafe;
+  --gold:#d4a43a;--goldlt:#fef3c7;
+  --white:#ffffff;--off:#f8f9fc;--off2:#f0f4fa;
+  --muted:#94a3b8;--body:#334155;--head:#0f172a;
+  --border:#e2e8f0;--border2:#cbd5e1;
+  --teal:#0d7a65;--teallt:#d1fae5;
+  --coral:#be3a2a;--corallt:#fee2e2;
+  --plum:#5b21b6;--plumlt:#ede9fe;
+  --r:16px;--rs:10px;
 }
-@media(prefers-color-scheme:dark){:root{
-  --bg:#111110;--surface:#1c1c1a;--surface2:#252523;
-  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
-  --text:#f0ede8;--text2:#a0a09a;--text3:#666;
-  --accent:#3ecf8e;--accent-light:#0d2b1e;--accent-border:#1a6b4a;
-  --tip:#2a1f00;--tip-border:#78530a;--tip-t:#fcd34d;
-  --tag-ny:#1e1a3a;--tag-ny-t:#a89eef;
-  --tag-orlando:#2e1508;--tag-orlando-t:#f5a882;
-  --tag-miami:#0d2b1e;--tag-miami-t:#3ecf8e;
-  --tag-docs:#0d1e38;--tag-docs-t:#7ab8f5;
-  --cal-today:#3ecf8e;--cal-event:#0d2b1e;--cal-event-t:#3ecf8e;
-}}
 html{font-size:16px;-webkit-text-size-adjust:100%}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:60px}
-
-/* TABS */
-.tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
-.tab-btn{flex:1;padding:14px 8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;border:none;background:transparent;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;-webkit-tap-highlight-color:transparent}
-.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+body{font-family:"Outfit",sans-serif;background:var(--off);color:var(--body);min-height:100vh;padding-bottom:80px;overflow-x:hidden}
+.hero{position:relative;overflow:hidden;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center center}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,9,15,.3) 0%,rgba(6,9,15,.2) 35%,rgba(6,9,15,.62) 68%,rgba(6,9,15,.93) 100%)}
+.hero-c{position:relative;z-index:2;padding:28px 22px 30px}
+.hero-lbl{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.hero-lbl::before{content:"";width:18px;height:1px;background:rgba(255,255,255,.3)}
+.hero-title{font-family:"Cormorant Garamond",serif;font-size:40px;font-weight:600;color:#fff;line-height:1.08;letter-spacing:-.4px}
+.hero-title em{font-style:italic;color:#f0c060}
+.hero-meta{display:flex;align-items:center;gap:7px;margin-top:9px;flex-wrap:wrap}
+.hero-meta span{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:rgba(255,255,255,.42);letter-spacing:.06em}
+.hero-sep{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.2)}
+.hero-chips{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:5px 13px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs{display:flex;background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:0 1px 10px rgba(15,23,42,.07)}
+.tab-btn{flex:1;padding:14px 4px 13px;font-family:"Outfit",sans-serif;font-size:12px;font-weight:500;border:none;background:transparent;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;-webkit-tap-highlight-color:transparent;white-space:nowrap}
+.tab-btn.active{color:var(--sky);border-bottom-color:var(--sky);font-weight:600}
 .tab-content{display:none}
 .tab-content.active{display:block}
-
-/* HEADER */
-.page-header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 20px}
-.page-title{font-size:18px;font-weight:600;letter-spacing:-.4px}
-.page-sub{font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);margin-top:3px}
-
-/* CALENDAR */
-.cal-wrap{padding:16px}
-.cal-month{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;margin-bottom:12px}
-.cal-month-header{padding:14px 16px;font-size:14px;font-weight:600;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.cal-month-label{font-size:14px;font-weight:600}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
-.cal-dow{text-align:center;padding:8px 4px;font-size:10px;font-family:'DM Mono',monospace;color:var(--text3);font-weight:500}
-.cal-day{text-align:center;padding:6px 4px;min-height:44px;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent;transition:background .15s;display:flex;flex-direction:column;align-items:center;gap:2px}
-.cal-day:active{background:var(--surface2)}
-.cal-day.empty{cursor:default}
-.cal-day-num{font-size:13px;font-weight:500;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%}
-.cal-day.has-event .cal-day-num{background:var(--accent);color:#fff;font-weight:600}
-.cal-day.multi-city .cal-day-num{background:var(--accent);color:#fff}
-.cal-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.6}
-
-/* DAY MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;align-items:flex-end;justify-content:center}
-.modal-overlay.open{display:flex}
-.modal{background:var(--surface);border-radius:20px 20px 0 0;width:100%;max-width:480px;max-height:85vh;overflow-y:auto;padding-bottom:40px}
-.modal-handle{width:36px;height:4px;background:var(--border2);border-radius:99px;margin:12px auto 0}
-.modal-header{padding:16px 20px 12px;border-bottom:1px solid var(--border)}
-.modal-date{font-size:13px;font-family:'DM Mono',monospace;color:var(--text2);margin-bottom:4px}
-.modal-title{font-size:17px;font-weight:600}
-.modal-city-tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:99px;margin-top:8px}
-.modal-body{padding:16px 20px}
-.modal-section{margin-bottom:16px}
-.modal-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:8px;font-family:'DM Mono',monospace}
-.modal-item{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13.5px;line-height:1.45}
-.modal-item:last-child{border-bottom:none}
-.modal-item-time{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);min-width:42px;padding-top:2px;flex-shrink:0}
-.modal-tip{font-size:11.5px;color:var(--tip-t);background:var(--tip);border:1px solid var(--tip-border);border-radius:6px;padding:6px 9px;margin-top:5px;line-height:1.4}
-.close-btn{display:block;margin:16px 20px 0;padding:12px;background:var(--surface2);border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;width:calc(100% - 40px);text-align:center;-webkit-tap-highlight-color:transparent}
-
-/* CHECKLIST */
-.cl-header{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 20px}
-.cl-prog-row{display:flex;justify-content:space-between;margin-bottom:6px}
-.cl-prog-text{font-size:12px;color:var(--text2);font-family:'DM Mono',monospace}
-.cl-prog-pct{font-size:12px;font-weight:600;color:var(--accent);font-family:'DM Mono',monospace}
-.cl-prog-track{height:4px;background:var(--surface2);border-radius:99px;overflow:hidden}
-.cl-prog-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .4s cubic-bezier(.4,0,.2,1);width:0%}
-.controls{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;scrollbar-width:none}
-.controls::-webkit-scrollbar{display:none}
-.ctrl-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;white-space:nowrap;padding:6px 14px;border-radius:99px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.ctrl-btn:active{background:var(--surface2)}
-.cl-content{padding:0 16px}
-.section{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:10px;overflow:hidden}
-.section-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;gap:10px}
-.section-header:active{background:var(--surface2)}
-.sec-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
-.sec-icon{font-size:18px;flex-shrink:0;line-height:1}
-.sec-info{flex:1;min-width:0}
-.sec-title{font-size:14px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sec-count{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-top:2px}
-.sec-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.sec-badge{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:var(--surface2);color:var(--text2);border:1px solid var(--border);transition:all .2s}
-.sec-badge.complete{background:var(--accent-light);color:var(--accent);border-color:var(--accent-border)}
-.chevron{color:var(--text3);font-size:12px;transition:transform .25s cubic-bezier(.4,0,.2,1);flex-shrink:0}
-.chevron.open{transform:rotate(180deg)}
-.items-wrap{display:none;border-top:1px solid var(--border)}
-.items-wrap.open{display:block}
-.item{display:flex;align-items:flex-start;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.item:last-child{border-bottom:none}
-.item:active{background:var(--surface2)}
-.item-check{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border2);background:var(--surface);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.item-check.checked{background:var(--accent);border-color:var(--accent)}
-.item-check.checked::after{content:'';display:block;width:10px;height:7px;border-left:2px solid white;border-bottom:2px solid white;transform:rotate(-45deg) translateY(-1px)}
-.item-body{flex:1;min-width:0}
-.item-text{font-size:13.5px;color:var(--text);line-height:1.45;transition:color .15s}
-.item-text.checked{text-decoration:line-through;color:var(--text3)}
-.item-tip{font-size:11.5px;color:var(--tip-t);background:var(--tip);border:1px solid var(--tip-border);border-radius:6px;padding:5px 8px;margin-top:5px;line-height:1.4}
+.wrap{padding:16px 14px 0}
+.card{background:var(--white);border-radius:var(--r);box-shadow:0 1px 3px rgba(15,23,42,.07),0 4px 16px rgba(15,23,42,.07);overflow:hidden;margin-bottom:12px}
+.card-hd{padding:14px 16px;background:linear-gradient(135deg,var(--night),var(--navy2));display:flex;justify-content:space-between;align-items:center}
+.card-hd-t{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;color:var(--white)}
+.card-hd-h{font-family:"JetBrains Mono",monospace;font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);padding:10px 8px 14px;gap:2px}
+.cal-dow{text-align:center;padding:5px 0;font-size:9px;font-family:"JetBrains Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.cd{display:flex;flex-direction:column;align-items:center;padding:3px 1px;gap:2px;border-radius:var(--rs);transition:background .12s;cursor:default;-webkit-tap-highlight-color:transparent}
+.cd.clk{cursor:pointer}
+.cd.clk:active{background:var(--off2)}
+.cdn{font-size:13px;font-weight:400;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--muted);transition:all .18s}
+.cd.clk .cdn{color:var(--body);font-weight:500}
+.cd.ev .cdn{color:#fff!important;font-weight:700}
+.cdp{width:14px;height:2.5px;border-radius:99px;opacity:0}
+.cd.ev .cdp{opacity:.7}
+.c-ny .cdn{background:#1e1b4b}.c-ny .cdp{background:#7c3aed}
+.c-fl .cdn{background:#0c2461}.c-fl .cdp{background:#2563b8}
+.c-mi .cdn{background:#064e3b}.c-mi .cdp{background:#059669}
+.c-or .cdn{background:#7c1d1d}.c-or .cdp{background:#dc2626}
+.c-hm .cdn{background:#1e293b}.c-hm .cdp{background:#475569}
+.leg-wrap{padding:0 14px 12px}
+.leg-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.leg-item{display:flex;align-items:center;gap:9px;background:var(--white);border-radius:var(--rs);padding:10px 12px;box-shadow:0 1px 3px rgba(15,23,42,.07),0 4px 16px rgba(15,23,42,.07)}
+.leg-dot{width:9px;height:9px;border-radius:3px;flex-shrink:0}
+.leg-t{font-size:12px;font-weight:500;color:var(--body)}
+.leg-d{font-size:9.5px;font-family:"JetBrains Mono",monospace;color:var(--muted);display:block;margin-top:1px}
+.apps-wrap{padding:0 14px 16px}
+.apps-card{background:var(--white);border-radius:var(--r);box-shadow:0 1px 3px rgba(15,23,42,.07),0 4px 16px rgba(15,23,42,.07);padding:14px 16px}
+.apps-lbl{font-size:9.5px;font-family:"JetBrains Mono",monospace;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.apps-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.apps-row::-webkit-scrollbar{display:none}
+.app-c{display:flex;align-items:center;gap:9px;background:var(--off);border:1px solid var(--border);border-radius:12px;padding:9px 13px;white-space:nowrap;flex-shrink:0}
+.app-e{font-size:17px}
+.app-n{font-size:12px;font-weight:600;color:var(--head);display:block}
+.app-d{font-size:10px;color:var(--muted);display:block;margin-top:1px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(6,9,15,.6);z-index:500;align-items:flex-end;justify-content:center;backdrop-filter:blur(5px)}
+.overlay.open{display:flex}
+.modal{background:var(--white);border-radius:24px 24px 0 0;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:0 -8px 48px rgba(6,9,15,.22)}
+.modal-drag{width:36px;height:4px;border-radius:99px;background:var(--border2);margin:12px auto 0}
+.m-hd{padding:18px 20px 14px}
+.m-stripe{height:3px;border-radius:99px;margin-bottom:14px}
+.m-city{font-size:10px;font-family:"JetBrains Mono",monospace;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.m-title{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;color:var(--head);line-height:1.2}
+.m-date{font-size:11px;font-family:"JetBrains Mono",monospace;color:var(--muted);margin-top:4px}
+.m-div{height:1px;background:var(--border);margin:0 20px}
+.m-body{padding:14px 20px}
+.ev-row{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+.ev-row:last-child{border-bottom:none}
+.ev-time{font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:500;min-width:36px;text-align:right;padding-top:3px;flex-shrink:0;line-height:1.3}
+.ev-txt{font-size:13.5px;line-height:1.5;color:var(--body);flex:1}
+.ev-tip{background:var(--goldlt);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:6px 9px;margin-top:5px;font-size:11px;line-height:1.4;color:#78350f}
+.m-close{display:block;margin:14px 20px 20px;padding:14px;background:var(--night);border:none;border-radius:12px;font-family:"Outfit",sans-serif;font-size:13px;font-weight:600;color:#fff;cursor:pointer;width:calc(100% - 40px);text-align:center;-webkit-tap-highlight-color:transparent}
+.cl-hd{background:var(--white);border-bottom:1px solid var(--border);padding:14px 18px 12px}
+.cl-r1{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.cl-ttl{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;color:var(--head)}
+.cl-bdg{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:500;padding:3px 9px;border-radius:99px;background:var(--off2);color:var(--muted);border:1px solid var(--border)}
+.cl-bdg.ok{background:var(--teallt);color:var(--teal);border-color:#a7f3d0}
+.pg-row{display:flex;justify-content:space-between;margin-bottom:5px}
+.pg-l{font-size:11px;font-family:"JetBrains Mono",monospace;color:var(--muted)}
+.pg-p{font-size:11px;font-family:"JetBrains Mono",monospace;font-weight:500;color:var(--sky)}
+.pg-tk{height:4px;background:var(--off2);border-radius:99px;overflow:hidden}
+.pg-fl{height:100%;background:linear-gradient(90deg,#1d4ed8,#3b82f6);border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
+.ctrls{display:flex;gap:6px;padding:10px 14px;overflow-x:auto;scrollbar-width:none}
+.ctrls::-webkit-scrollbar{display:none}
+.ctrl{font-family:"Outfit",sans-serif;font-size:11.5px;font-weight:500;white-space:nowrap;padding:6px 14px;border-radius:99px;border:1px solid var(--border2);background:var(--white);color:var(--body);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all .15s}
+.ctrl:active{background:var(--off2);transform:scale(.97)}
+.cl-list{padding:0 14px}
+.sec{background:var(--white);border-radius:var(--r);box-shadow:0 1px 3px rgba(15,23,42,.07),0 4px 16px rgba(15,23,42,.07);margin-bottom:10px;overflow:hidden}
+.sec-hd{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;transition:background .12s}
+.sec-hd:active{background:var(--off)}
+.sec-bar{width:3px;height:36px;border-radius:99px;flex-shrink:0}
+.sec-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.sec-meta{flex:1;min-width:0}
+.sec-name{font-size:13px;font-weight:600;color:var(--head);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sec-sub{font-family:"JetBrains Mono",monospace;font-size:9.5px;color:var(--muted);margin-top:2px}
+.sec-r{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.sec-cnt{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:500;padding:2px 8px;border-radius:99px;background:var(--off2);color:var(--muted);border:1px solid var(--border);transition:all .2s}
+.sec-cnt.ok{background:var(--teallt);color:var(--teal);border-color:#a7f3d0}
+.chev{color:var(--muted);font-size:10px;transition:transform .22s cubic-bezier(.4,0,.2,1);flex-shrink:0}
+.chev.open{transform:rotate(180deg)}
+.items{display:none;border-top:1px solid var(--border)}
+.items.open{display:block}
+.it{display:flex;align-items:flex-start;gap:11px;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .12s}
+.it:last-child{border-bottom:none}
+.it:active{background:var(--off)}
+.it-box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border2);background:var(--white);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .18s}
+.it-box.on{background:var(--teal);border-color:var(--teal)}
+.it-box.on::after{content:"";display:block;width:10px;height:6px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translateY(-1px)}
+.it-body{flex:1;min-width:0}
+.it-txt{font-size:13.5px;color:var(--body);line-height:1.5;transition:color .15s}
+.it-txt.on{text-decoration:line-through;color:var(--muted)}
+.it-tip{background:var(--goldlt);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:5px 9px;margin-top:5px;font-size:11px;color:#78350f;line-height:1.4}
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
-.tag{font-size:10px;font-weight:500;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:4px}
-.tag-ny{background:var(--tag-ny);color:var(--tag-ny-t)}
-.tag-orlando{background:var(--tag-orlando);color:var(--tag-orlando-t)}
-.tag-miami{background:var(--tag-miami);color:var(--tag-miami-t)}
-.tag-docs{background:var(--tag-docs);color:var(--tag-docs-t)}
-.footer{text-align:center;padding:24px 20px 12px;font-size:11px;color:var(--text3);font-family:'DM Mono',monospace}
-@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
-.pop{animation:pop .25s ease}
+.tag{font-size:9px;font-weight:600;font-family:"JetBrains Mono",monospace;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.t-dc{background:var(--skylt);color:var(--sky)}
+.t-ny{background:var(--plumlt);color:var(--plum)}
+.t-or{background:var(--corallt);color:var(--coral)}
+.t-mi{background:var(--teallt);color:var(--teal)}
+.tips-wrap{padding:14px}
+.tip-sec{margin-bottom:14px;border-radius:var(--r);overflow:hidden;box-shadow:0 1px 3px rgba(15,23,42,.07),0 4px 16px rgba(15,23,42,.07)}
+.tip-sec-hd{display:flex;align-items:center;gap:10px;padding:13px 16px;background:var(--night)}
+.tip-sec-ico{font-size:19px}
+.tip-sec-ttl{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;color:#fff}
+.tip-body{background:var(--white)}
+.tip-row{display:flex;align-items:flex-start;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border)}
+.tip-row:last-child{border-bottom:none}
+.tip-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:var(--off2)}
+.tip-c{flex:1}
+.tip-m{font-size:13.5px;color:var(--head);line-height:1.45;font-weight:500}
+.tip-s{font-size:12px;color:var(--muted);line-height:1.4;margin-top:3px}
+.tip-bdg{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:"JetBrains Mono",monospace;font-weight:600;padding:3px 9px;border-radius:99px;margin-top:6px;letter-spacing:.02em}
+.b-hi{background:#dcfce7;color:#15803d}
+.b-mid{background:#fef9c3;color:#854d0e}
+.footer{text-align:center;padding:28px 20px 16px;font-size:9.5px;color:var(--muted);font-family:"JetBrains Mono",monospace;letter-spacing:.08em}
+@keyframes pop{0%{transform:scale(1)}45%{transform:scale(1.15)}100%{transform:scale(1)}}
+.pop{animation:pop .22s cubic-bezier(.2,0,.2,1)}
+@keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
+.overlay.open .modal{animation:slideUp .3s cubic-bezier(.16,1,.3,1)}
 </style>
 </head>
 <body>
-
-<div class="tabs">
-  <button class="tab-btn active" onclick="showTab('roteiro')">📅 Roteiro</button>
-  <button class="tab-btn" onclick="showTab('checklist')">✅ Checklist</button>
-</div>
-
-<!-- ========== ROTEIRO ========== -->
-<div class="tab-content active" id="tab-roteiro">
-  <div class="page-header">
-    <div class="page-title">✈️ Viagem EUA — Roteiro</div>
-    <div class="page-sub">14 abr – 28 abr 2026 · Toque em um dia para ver os detalhes</div>
+<div class="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <div class="hero-lbl">Abril 2026 &middot; 15 dias &middot; 4 destinos</div>
+    <div class="hero-title">Viagem aos<br><em>Estados Unidos</em></div>
+    <div class="hero-meta">
+      <span>14 ABR</span><span class="hero-sep"></span>
+      <span>28 ABR</span><span class="hero-sep"></span>
+      <span>4 CIDADES</span>
+    </div>
+    <div class="hero-chips">
+      <span class="chip">&#x1F5FD; Nova York</span>
+      <span class="chip">&#x1F3D6;&#xFE0F; Miami</span>
+      <span class="chip">&#x1F3A2; Orlando</span>
+    </div>
   </div>
-  <div class="cal-wrap" id="cal-wrap"></div>
 </div>
-
-<!-- ========== CHECKLIST ========== -->
-<div class="tab-content" id="tab-checklist">
-  <div class="cl-header">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
-      <div>
-        <div style="font-size:17px;font-weight:600">✅ Checklist</div>
-        <div style="font-size:11px;font-family:'DM Mono',monospace;color:var(--text2);margin-top:3px">família com 2 crianças · NY · Orlando · Miami</div>
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('roteiro')">&#x1F4C5; Roteiro</button>
+  <button class="tab-btn" onclick="showTab('checklist')">&#x2705; Checklist</button>
+  <button class="tab-btn" onclick="showTab('dicas')">&#x1F4A1; Dicas</button>
+</div>
+<div class="tab-content active" id="tab-roteiro">
+  <div class="wrap">
+    <div class="card">
+      <div class="card-hd"><span class="card-hd-t">Abril 2026</span><span class="card-hd-h">Toque num dia</span></div>
+      <div class="cal-grid" id="cal"></div>
+    </div>
+  </div>
+  <div class="leg-wrap">
+    <div class="leg-grid">
+      <div class="leg-item"><div class="leg-dot" style="background:#1e1b4b"></div><div><span class="leg-t">&#x1F5FD; Nova York</span><span class="leg-d">14&ndash;17 abr</span></div></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#0c2461"></div><div><span class="leg-t">&#x2708;&#xFE0F; Deslocamento</span><span class="leg-d">13, 18 abr</span></div></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#064e3b"></div><div><span class="leg-t">&#x1F3D6;&#xFE0F; Miami / FLL</span><span class="leg-d">19 abr</span></div></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#7c1d1d"></div><div><span class="leg-t">&#x1F3A2; Orlando</span><span class="leg-d">20&ndash;28 abr</span></div></div>
+    </div>
+  </div>
+  <div class="apps-wrap">
+    <div class="apps-card">
+      <div class="apps-lbl">&#x1F4F1; Apps essenciais</div>
+      <div class="apps-row">
+        <div class="app-c"><span class="app-e">&#x1F3F0;</span><div><span class="app-n">My Disney Experience</span><span class="app-d">Lightning Lane e filas</span></div></div>
+        <div class="app-c"><span class="app-e">&#x1F3A2;</span><div><span class="app-n">Universal Orlando</span><span class="app-d">Ingressos e Express</span></div></div>
+        <div class="app-c"><span class="app-e">&#x26FD;</span><div><span class="app-n">GasBuddy</span><span class="app-d">Posto mais barato</span></div></div>
+        <div class="app-c"><span class="app-e">&#x1F5FA;&#xFE0F;</span><div><span class="app-n">Roadtrippers</span><span class="app-d">Rotas de estrada</span></div></div>
+        <div class="app-c"><span class="app-e">&#x1F687;</span><div><span class="app-n">MTA NYC Transit</span><span class="app-d">Metro de Nova York</span></div></div>
+        <div class="app-c"><span class="app-e">&#x1F697;</span><div><span class="app-n">Waze / Google Maps</span><span class="app-d">Navegacao de carro</span></div></div>
       </div>
     </div>
-    <div class="cl-prog-row">
-      <span class="cl-prog-text" id="prog-text">0 de 0 itens</span>
-      <span class="cl-prog-pct" id="prog-pct">0%</span>
-    </div>
-    <div class="cl-prog-track"><div class="cl-prog-fill" id="prog-fill"></div></div>
   </div>
-  <div class="controls">
-    <button class="ctrl-btn" onclick="expandAll()">Expandir tudo</button>
-    <button class="ctrl-btn" onclick="collapseAll()">Recolher tudo</button>
-    <button class="ctrl-btn" onclick="clearAll()">Limpar tudo</button>
+</div>
+<div class="tab-content" id="tab-checklist">
+  <div class="cl-hd">
+    <div class="cl-r1"><span class="cl-ttl">Checklist</span><span class="cl-bdg" id="cl-bdg">0 / 0</span></div>
+    <div class="pg-row"><span class="pg-l" id="pg-l">Carregando...</span><span class="pg-p" id="pg-p">0%</span></div>
+    <div class="pg-tk"><div class="pg-fl" id="pg-fl"></div></div>
   </div>
-  <div class="cl-content" id="cl-content"></div>
+  <div class="ctrls">
+    <button class="ctrl" onclick="expandAll()">Expandir tudo</button>
+    <button class="ctrl" onclick="collapseAll()">Recolher tudo</button>
+    <button class="ctrl" onclick="clearAll()">Limpar tudo</button>
+  </div>
+  <div class="cl-list" id="cl-list"></div>
   <div class="footer">progresso salvo neste dispositivo</div>
 </div>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modal" onclick="closeModal(event)">
-  <div class="modal" id="modal-box">
-    <div class="modal-handle"></div>
-    <div class="modal-header">
-      <div class="modal-date" id="m-date"></div>
-      <div class="modal-title" id="m-title"></div>
-      <div id="m-city-tag"></div>
+<div class="tab-content" id="tab-dicas">
+  <div class="tips-wrap" id="tips-wrap"></div>
+  <div class="footer">baseado no roteiro da familia</div>
+</div>
+<div class="overlay" id="overlay" onclick="closeBg(event)">
+  <div class="modal">
+    <div class="modal-drag"></div>
+    <div class="m-hd">
+      <div class="m-stripe" id="m-stripe"></div>
+      <div class="m-city" id="m-city"></div>
+      <div class="m-title" id="m-title"></div>
+      <div class="m-date" id="m-date"></div>
     </div>
-    <div class="modal-body" id="m-body"></div>
-    <button class="close-btn" onclick="closeModalBtn()">Fechar</button>
+    <div class="m-div"></div>
+    <div class="m-body" id="m-body"></div>
+    <button class="m-close" onclick="closeModal()">Fechar</button>
   </div>
 </div>
 
 <script>
-// ==================== ROTEIRO DATA ====================
-const cityColors = {
-  ny: { bg:'#e8e6f8', t:'#3d35a0', label:'🗽 Nova York' },
-  fl: { bg:'#fff0e0', t:'#8a4a00', label:'✈️ Voo / Trânsito' },
-  orlando: { bg:'#fde8df', t:'#9a3510', label:'🎢 Orlando' },
-  miami: { bg:'#e8f5ef', t:'#1a6b4a', label:'🏖️ Miami / Ft. Lauderdale' },
-  home: { bg:'#f0ede8', t:'#5a5a5a', label:'🏠 Itajaí' },
+// Set flag background
+document.getElementById("hero-bg").style.backgroundImage = "url('data:image/jpeg;base64,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')";
+
+const CM = {
+  hm: {color:"#1e293b", light:"#f1f5f9", label:"Itajai", c:"c-hm"},
+  ny: {color:"#1e1b4b", light:"#ede9fe", label:"Nova York", c:"c-ny"},
+  fl: {color:"#0c2461", light:"#dbeafe", label:"Deslocamento", c:"c-fl"},
+  mi: {color:"#064e3b", light:"#d1fae5", label:"Miami", c:"c-mi"},
+  or: {color:"#7c1d1d", light:"#fee2e2", label:"Orlando", c:"c-or"},
 };
 
-const itinerary = {
-  '2026-04-13': { title:'Partida de Itajaí', city:'home', items:[
-    { time:'', text:'Partida de Itajaí para o aeroporto de embarque', tip:'Confirme os documentos de TODOS: passaportes, vistos, certidões das crianças. Chegue com 3h de antecedência para voo internacional.' },
-    { time:'', text:'Bebê tem direito a despacho gratuito do carrinho + comida/bebida + embarque prioritário para toda família', tip:'Informe na hora do check-in que está viajando com criança menor de 2 anos.' },
-    { time:'', text:'Nos totens de carga USB do aeroporto: use adaptador próprio — não conecte apenas o cabo (risco de roubo de dados)' },
-  ]},
-  '2026-04-14': { title:'Dia 1 — Chegada e Grand Central', city:'ny', items:[
-    { time:'14h00', text:'Grand Central Terminal — Galeria dos Sussurros (Whispering Gallery) no subsolo: crianças adoram ouvir a voz do outro lado da parede', tip:'No subsolo: Grand Central Market (frutas picadas para as crianças), Li-Lac Chocolates (mais antigo de NY), banheiros limpos.' },
-    { time:'14h00', text:'Loja da Apple no Grand Central — compra do celular novo' },
-    { time:'', text:'Almoço: Chirping Chicken (frango grelhado, bom para crianças) ou Shake Shack (hambúrguer mais famoso de NY)' },
-    { time:'', text:'Sobremesa: Magnólia Bakery — pudim de banana famoso de NY' },
-    { time:'16h00', text:'Bryant Park — carrossel Le Carrousel (criança de 5 anos vai adorar) + gramados para o bebê descansar' },
-    { time:'17h00', text:'Loja FAO Schwarz — 30 Rockefeller Plaza' },
-    { time:'18h00', text:'Empire State Building ou Rockefeller Center — subir no final da tarde para ver as luzes acendendo', tip:'Prédio adaptado para carrinhos. Top of the Rock (Rockefeller) tem vista considerada melhor e fila menor que o Empire State.' },
-    { time:'20h00', text:'Jantar no Carmine\'s (reserva necessária)', tip:'Carmine\'s é famoso pelas porções familiares enormes — ótimo custo-benefício para grupos.' },
-    { time:'Noite', text:'Times Square — loja da Disney + M&M\'s World (obrigatório com crianças)', tip:'Lojas baratas próximas: Five Below (tudo até US$5), Grand Slam no andar debaixo da escada vermelha (souvenirs a US$0,99).' },
-  ]},
-  '2026-04-15': { title:'Dia 2 — Estátua da Liberdade e Brooklyn', city:'ny', items:[
-    { time:'Manhã', text:'Estátua da Liberdade — primeiro barco no Battery Park', tip:'O passeio de balsa já é diversão para as crianças. O museu na ilha é espaçoso para carrinhos. Reserve os ingressos com antecedência.' },
-    { time:'', text:'Touro de Wall Street (Charging Bull) — foto rápida e icônica, fica perto do Battery Park' },
-    { time:'14h30', text:'Memorial e Museu do 11 de Setembro — fontes externas são abertas e tranquilas', tip:'O Museu pode ser emocionalmente pesado. Ao lado fica o Oculus — estação de metrô futurista ótima para as crianças correrem no vão central.' },
-    { time:'16h30', text:'Brooklyn Bridge — caminhar um trecho para fotos', tip:'No lado do Brooklyn (DUMBO): Jane\'s Carousel, carrossel histórico lindo dentro de uma caixa de vidro. Time Out Market no Brooklyn tem boa comida com vista.' },
-    { time:'', text:'Dica de transporte: Downtown Connection é ônibus gratuito que circula pela Lower Manhattan' },
-  ]},
-  '2026-04-16': { title:'Dia 3 — Museus e Central Park', city:'ny', items:[
-    { time:'Manhã', text:'Museu Americano de História Natural — melhor museu do mundo para crianças', tip:'Salas dos dinossauros e a baleia azul gigante no teto encantam qualquer idade. Restaurante Bela Luna nas proximidades.' },
-    { time:'Almoço', text:'Shake Shack — há uma unidade logo atrás do museu' },
-    { time:'Tarde', text:'Central Park — Heckscher Playground (enorme e seguro) → Carrossel → Zoológico do Central Park', tip:'Zoológico pequeno, perfeito para 1h30 com crianças. Ideal para quem está com bebê e não quer se cansar muito.' },
-    { time:'Tarde', text:'The Plaza Hotel — do filme "Esqueceram de Mim" (Home Alone 2). Outra loja da Apple nas proximidades.' },
-    { time:'Tarde', text:'Retorno ao hotel pela 5ª Avenida — passeio muito agradável com vitrines' },
-    { time:'', text:'Dica: Joe\'s Pizza (onde Peter Parker trabalhava no filme), Levain Bakery (cookies mais famosos de NY), Lafayette Bakery (NY Rolls), Katz\'s Deli (pastrami famoso), Krispy Kreme' },
-  ]},
-  '2026-04-17': { title:'Dia 4 — High Line e Hudson Yards', city:'ny', items:[
-    { time:'Manhã', text:'Hudson Yards — The Vessel: visualmente incrível (acesso parcial, mas a base é aberta)' },
-    { time:'Tarde', text:'The High Line — jardim suspenso linear, plano, ótimo para carrinho de bebê', tip:'O High Line é completamente plano e livre de carros. Muitos bancos para paradas de amamentação ou descanso. Percurso tranquilo para crianças.' },
-    { time:'Final da tarde', text:'Chelsea Market — no final do High Line. Lanches, compras e boa gastronomia' },
-    { time:'', text:'Dica NY: criança até 1m11cm não paga no metrô e passa por baixo da catraca. Carrinho passa pela porta lateral.' },
-    { time:'', text:'Melhores banheiros perto de Times Square: Hotel Hard Rock, Loja da Disney, Hotel Marriott Marquis (lobby do 8º andar — pode subir sem falar com ninguém)' },
-    { time:'', text:'Bagel com cream cheese e salmão: Zucker\'s Bagels and Smoked Fish — imperdível' },
-  ]},
-  '2026-04-18': { title:'Voo NY → Fort Lauderdale/Miami', city:'fl', items:[
-    { time:'', text:'Voo para Fort Lauderdale (FLL) ou Miami (MIA)', tip:'Check-in online feito. Chegue com 2h de antecedência para doméstico com crianças.' },
-    { time:'', text:'Fort Lauderdale: Las Olas Boulevard — caminhar pela avenida charmosa e passeio de barco pelos canais', tip:'Almoço em Fort Lauderdale: Chima Steakhouse (rodízio ~US$44/pessoa) ou Red Lobster (bom custo-benefício para frutos do mar).' },
-  ]},
-  '2026-04-19': { title:'Miami — Chegada e Brickell', city:'miami', items:[
-    { time:'', text:'Check-in no hotel em Brickell — bairro bem localizado próximo a Miami Beach' },
-    { time:'', text:'Passeio pela Ocean Drive — ver a arquitetura Art Déco e o movimento da orla' },
-    { time:'', text:'Supermercado Publix ou Walmart próximo ao hotel — abastecer com água, snacks e fraldas', tip:'Conveniences de hotel cobram 3–4x mais. Comprar no supermercado economiza muito ao longo da estadia.' },
-    { time:'', text:'Dica de comida: Little Brazil — 6984 Collins Ave, Miami Beach' },
-  ]},
-  '2026-04-20': { title:'Dia 1 Orlando — Epic Universe', city:'orlando', items:[
-    { time:'Manhã cedo', text:'Voo ou transfer Miami → Orlando / Check-in no hotel' },
-    { time:'', text:'🎢 Epic Universe — parque NOVO da Universal (aberto em 2025!)', tip:'Epic Universe é o mais novo parque de Orlando. Inclui mundos temáticos de Harry Potter (Ministério da Magia), Nintendo, How to Train Your Dragon e mais. Compre ingressos com antecedência — mais concorrido por ser novidade.' },
-    { time:'', text:'Usar Child Swap na Universal para atrações que o bebê não pode entrar', tip:'Grupo entra junto na fila → avisa que quer Child Swap → adulto espera em sala com o bebê → quando primeiro adulto voltar, segundo vai direto para a atração sem pegar fila.' },
-    { time:'', text:'Aplicar protetor solar a cada 2h + poncho de chuva (chove quase todo dia à tarde em Orlando)' },
-    { time:'', text:'Levar snacks e garrafinhas de água — economiza US$50–100 no dia' },
-  ]},
-  '2026-04-21': { title:'Dia 2 Orlando — Compras + Teleférico Disney', city:'orlando', items:[
-    { time:'Manhã', text:'Dia de compras — outlets e lojas', tip:'Outlet Marketplace (5269 International Dr), The Loop (3208 John Young Pkwy, Kissimmee), Dillard\'s Clearance. Tommy mais barata: The Loop, 2613 W Osceola Pkwy. Ross, Marshalls, TJ Maxx, Target.' },
-    { time:'', text:'Primark no The Florida Mall — produtos da Disney com ótimos preços', tip:'Walmart Kissimmee (2855 N Old Lake Wilson Rd) vende souvenirs originais Disney muito mais baratos que dentro dos parques.' },
-    { time:'Tarde/Noite', text:'Passeio de teleférico (Skyliner) pelos hotéis da Disney — incluir parada no Art of Animation Hotel (cenário do filme Carros!)', tip:'O Skyliner Disney é gratuito. Vista incrível dos parques do alto. Perfeito para crianças.' },
-    { time:'Final do dia', text:'Encontro com Tico e Teco com marshmallow no final do dia (confirmar local e horário no app Disney)' },
-    { time:'', text:'Gideon\'s Bakehouse — cookie mais famoso de Orlando', tip:'A fila na Disney Springs é quilométrica. Alternativa sem fila: East End Market, no centro de Orlando.' },
-  ]},
-  '2026-04-22': { title:'Dia 3 Orlando — Adventure Island', city:'orlando', items:[
-    { time:'', text:'🌊 Adventure Island (parque aquático Busch Gardens Tampa) ou parque aquático em Orlando', tip:'Levar bastante protetor solar resistente à água. Reaplique a cada 2h. Levain Bakery para lanche fácil.' },
-    { time:'', text:'Roupa de banho extra + toalha + protetor solar resistente à água para todos' },
-    { time:'', text:'Levar carrinho leve para o bebê descansar entre as atrações' },
-  ]},
-  '2026-04-23': { title:'Dia 4 Orlando — Magic Kingdom', city:'orlando', items:[
-    { time:'Chegue 45–60min antes da abertura', text:'Magic Kingdom — chegar antes da abertura para aproveitar as primeiras filas menores', tip:'A estratégia de chegar cedo é ouro com crianças pequenas. A primeira hora tem filas 3–5x menores.' },
-    { time:'', text:'Ativar Lightning Lane Multi Pass logo ao entrar no parque pelo app Disney', tip:'Reserve primeiro as atrações mais disputadas: Seven Dwarfs Mine Train, Tron Lightcycle Run (107cm mínimo), Space Mountain (112cm mínimo).' },
-    { time:'', text:'Usar Rider Switch nas atrações com altura mínima que o bebê não atingir', tip:'Vá até a entrada da atração, avise o Cast Member, ele inclui o Rider Switch no app. O segundo adulto usa a fila Lightning Lane depois — quase sem espera.' },
-    { time:'', text:'Festival of Fantasy (desfile) — chegar 30–45 min antes para bom lugar com as crianças' },
-    { time:'Noite', text:'Show noturno Happily Ever After (fogos + projeções no castelo) — posicionar-se na Main Street U.S.A.' },
-    { time:'', text:'Doces imperdíveis na Disney Springs (após o parque ou outro dia): Gideon\'s Bakehouse, The Ganachery (s\'mores), Ghirardelli, Everglazed Donuts (Peanut Butter Explosion), Amorette\'s Patisserie (Petite Mickey Dome)' },
-  ]},
-  '2026-04-24': { title:'Dia 5 Orlando — Dia livre + Universal CityWalk', city:'orlando', items:[
-    { time:'Manhã/Tarde', text:'Dia livre — sugestão: descanso, piscina do hotel, compras de última hora' },
-    { time:'18h00+', text:'Universal CityWalk — estacionar após 18h (gratuito!)', tip:'Chegue no estacionamento após 18h para não pagar. Siga em direção ao lago na frente da entrada dos parques.' },
-    { time:'', text:'Táxi aquático gratuito pelo lago até os hotéis da Universal' },
-    { time:'', text:'Barco para o Portofino Bay Hotel — hotel de luxo temático inspirado na Itália', tip:'Vários restaurantes ótimos. Dica da Beatriz: Mama Della\'s para jantar — ambiente encantador.' },
-  ]},
-  '2026-04-25': { title:'Dia 6 Orlando — Universal Studios + Islands', city:'orlando', items:[
-    { time:'Chegue 45–60min antes da abertura', text:'Universal Studios Florida + Islands of Adventure', tip:'Hóspedes de hotéis premium da Universal têm Universal Express Pass gratuito — pode compensar o custo maior do hotel.' },
-    { time:'', text:'Wizarding World of Harry Potter (Hogsmeade + Diagon Alley) — imperdível para a criança de 5 anos' },
-    { time:'', text:'Child Swap disponível em todas as atrações com altura mínima — peça ao funcionário na entrada da fila' },
-    { time:'', text:'Levar comida e snacks para economizar dentro do parque' },
-  ]},
-  '2026-04-26': { title:'Dia 7 Orlando — Café com Mickey + Parque Aquático', city:'orlando', items:[
-    { time:'8h35', text:'☕ Café da manhã com o Mickey — RESERVA OBRIGATÓRIA (confirmar local no app Disney)', tip:'Character Dining esgota meses antes. Confirme a reserva no app My Disney Experience.' },
-    { time:'Tarde', text:'Parque aquático Disney (Typhoon Lagoon ou Blizzard Beach)', tip:'Typhoon Lagoon tem mais atrações para crianças pequenas. Blizzard Beach tem toboáguas maiores. Verificar qual está aberto na data.' },
-    { time:'', text:'Protetor solar resistente à água, reaplicar a cada 2h. Barraquinha de sombra para o bebê.' },
-  ]},
-  '2026-04-27': { title:'Dia 8 Orlando — Epic Universe + Jantar T-Rex', city:'orlando', items:[
-    { time:'Manhã', text:'Epic Universe — segunda visita, aproveitar o que não deu no dia 20', tip:'Com a experiência da primeira visita, será mais fácil otimizar o roteiro e usar o app da Universal.' },
-    { time:'20h00', text:'🦕 Jantar no T-Rex (reserva às 20h) — Disney Springs', tip:'T-Rex é um restaurante temático de dinossauros com efeitos especiais. As crianças vão adorar. Reserva essencial.' },
-    { time:'', text:'Cicis Pizza para almoço: pizza, massa e salada à vontade por US$10,90 (promoção seg/ter por US$4,99)' },
-  ]},
-  '2026-04-28': { title:'Dia 9 Orlando — Celebration + Partida', city:'orlando', items:[
-    { time:'Manhã–16h', text:'Dia livre — Sugestão: cidade de Celebration (30 min de Orlando)', tip:'Celebration foi projetada pelo Walt Disney — uma cidadezinha charmosa e perfeita para uma manhã tranquila com as crianças. Vale muito a pena!' },
-    { time:'16h00', text:'Transfer para o aeroporto / Check-in para o voo de retorno' },
-    { time:'', text:'Última parada: Aldi (preços melhores que Walmart, chocolates europeus baratos, salmão barato) ou Mercado do Walmart para últimas compras' },
-    { time:'', text:'Dica restaurante rápido no aeroporto ou saída: IHOP (café da manhã americano típico), Chick-Fil-A (melhor sanduíche de frango de Orlando), Olive Garden (bom e barato)' },
-  ]},
-};
-
-// City color for days without specific city
 const dayCity = {
-  '2026-04-13':'home','2026-04-14':'ny','2026-04-15':'ny','2026-04-16':'ny','2026-04-17':'ny',
-  '2026-04-18':'fl','2026-04-19':'miami',
-  '2026-04-20':'orlando','2026-04-21':'orlando','2026-04-22':'orlando','2026-04-23':'orlando',
-  '2026-04-24':'orlando','2026-04-25':'orlando','2026-04-26':'orlando','2026-04-27':'orlando','2026-04-28':'orlando',
+  "2026-04-13":"hm","2026-04-14":"ny","2026-04-15":"ny","2026-04-16":"ny","2026-04-17":"ny",
+  "2026-04-18":"fl","2026-04-19":"mi",
+  "2026-04-20":"or","2026-04-21":"or","2026-04-22":"or","2026-04-23":"or",
+  "2026-04-24":"or","2026-04-25":"or","2026-04-26":"or","2026-04-27":"or","2026-04-28":"or",
 };
 
-const months = [
-  { year:2026, month:3, label:'Abril 2026' }, // month is 0-indexed
-];
+const itin = {
+  "2026-04-13": {title:"Partida de Itajai", city:"hm", items:[
+    {time:"", text:"Partida para o aeroporto de embarque", tip:"Documentos de TODOS: passaportes, vistos, certidoes. Chegue 3h antes para voos internacionais."},
+    {time:"", text:"Bebe Dudu: despacho gratuito do carrinho + comida/bebida + embarque prioritario", tip:"Informe no check-in que ha crianca menor de 2 anos."},
+    {time:"", text:"Totens USB do aeroporto: use adaptador proprio — risco de roubo de dados com cabo direto"},
+  ]},
+  "2026-04-14": {title:"Dia 1 — Grand Central e Times Square", city:"ny", items:[
+    {time:"14h", text:"Grand Central Terminal — Galeria dos Sussurros + Loja da Apple", tip:"Subsolo: Grand Central Market (frutas p/ criancas), Li-Lac Chocolates (mais antigo de NY), banheiros limpos."},
+    {time:"", text:"Almoco: Chirping Chicken (frango grelhado) ou Shake Shack (hamburguer iconico de NY)"},
+    {time:"", text:"Sobremesa: Magnolia Bakery — pudim de banana famoso de NY"},
+    {time:"16h", text:"Bryant Park — Le Carrousel + gramados para o bebe"},
+    {time:"17h", text:"Loja FAO Schwarz — 30 Rockefeller Plaza"},
+    {time:"18h", text:"Top of the Rock ou Empire State — subir no final da tarde", tip:"Top of the Rock: vista melhor e fila menor. Adaptado para carrinho."},
+    {time:"20h", text:"Jantar no Carmines — reserva necessaria", tip:"Porcoes familiares enormes. Otimo custo-beneficio para grupos."},
+    {time:"Noite", text:"Times Square — Loja da Disney + M&Ms World", tip:"Five Below (tudo ate US$5) · Grand Slam (souvenirs por US$0,99 embaixo da escada vermelha)."},
+  ]},
+  "2026-04-15": {title:"Dia 2 — Estatua da Liberdade e Brooklyn", city:"ny", items:[
+    {time:"Manha", text:"Estatua da Liberdade — primeiro barco no Battery Park", tip:"Reserve ingressos com antecedencia. Museu na ilha espacoso para carrinhos."},
+    {time:"", text:"Touro de Wall Street (Charging Bull) — foto rapida perto do Battery Park"},
+    {time:"14h30", text:"Memorial do 11 de Setembro — fontes abertas e tranquilas", tip:"Oculus ao lado: otimo para as criancas correrem."},
+    {time:"16h30", text:"Brooklyn Bridge — caminhar e fotos. DUMBO: Janes Carousel", tip:"Time Out Market no Brooklyn: boa comida com vista."},
+    {time:"", text:"Downtown Connection: onibus gratuito pela Lower Manhattan"},
+  ]},
+  "2026-04-16": {title:"Dia 3 — Museus e Central Park", city:"ny", items:[
+    {time:"Manha", text:"Museu de Historia Natural — melhor museu do mundo para criancas", tip:"Salas dos dinossauros e a baleia azul. Restaurante Bela Luna nas proximidades."},
+    {time:"Almoco", text:"Shake Shack — logo atras do museu"},
+    {time:"Tarde", text:"Central Park — Heckscher Playground + Carrossel + Zoologico", tip:"Zoologico pequeno, perfeito para 1h30 com criancas."},
+    {time:"", text:"The Plaza Hotel — do filme Esqueceram de Mim (Home Alone 2)"},
+    {time:"", text:"Voltar ao hotel pela 5a Avenida"},
+    {time:"", text:"Gastronomia: Joes Pizza, Levain Bakery, Lafayette Bakery, Katzs Deli, Krispy Kreme"},
+  ]},
+  "2026-04-17": {title:"Dia 4 — High Line e Hudson Yards", city:"ny", items:[
+    {time:"Manha", text:"Hudson Yards — The Vessel"},
+    {time:"Tarde", text:"The High Line — jardim suspenso plano, otimo para carrinho", tip:"Sem carros, muitos bancos. Otimo para amamentacao e descanso."},
+    {time:"Final da tarde", text:"Chelsea Market — gastronomia e compras"},
+    {time:"", text:"Metro NY: crianca ate 1m11cm nao paga, passa por baixo da catraca"},
+    {time:"", text:"Banheiros perto de Times Square: Hard Rock Hotel, Loja da Disney, Marriott Marquis (lobby 8o andar)"},
+    {time:"", text:"Zuckers Bagels — bagel com cream cheese e salmao"},
+  ]},
+  "2026-04-18": {title:"Voo NY + Aluguel de Carro em FLL", city:"fl", items:[
+    {time:"", text:"Voo para Fort Lauderdale (FLL)", tip:"Chegar 2h antes para domestico com criancas."},
+    {time:"", text:"Retirar carro alugado no aeroporto — CNH Internacional + cartao de credito", tip:"Reserve com antecedencia. Verificar seguro CDW e cadeirinha de bebe. Fotografar o carro antes de sair."},
+    {time:"", text:"Fort Lauderdale — Las Olas Boulevard + passeio de barco pelos canais", tip:"Almoco: Chima Steakhouse (rodizio ~US$44/pessoa) ou Red Lobster."},
+  ]},
+  "2026-04-19": {title:"Miami — Chegada e Exploracao", city:"mi", items:[
+    {time:"", text:"Check-in no hotel em Brickell"},
+    {time:"", text:"Ocean Drive — arquitetura Art Deco e orla"},
+    {time:"", text:"Wynwood Walls — grafites dos brasileiros Os Gemeos e Eduardo Kobra", tip:"Miami Design District ao lado. Passeio externo gratuito."},
+    {time:"", text:"Little Havana (Calle Ocho) — almoco cubano autentico", tip:"US$12-18 por refeicao. Muito mais barato que South Beach."},
+    {time:"", text:"Publix ou Walmart: agua, snacks, fraldas logo na chegada"},
+    {time:"", text:"Little Brazil — 6984 Collins Ave, Miami Beach"},
+  ]},
+  "2026-04-20": {title:"Dia 1 Orlando — Epic Universe", city:"or", items:[
+    {time:"", text:"Dirigir Miami a Orlando (~4h) pela Florida Turnpike", tip:"GasBuddy para postos baratos. Parada sugerida em Palm Beach Gardens."},
+    {time:"", text:"Epic Universe — parque NOVO da Universal (2025!)", tip:"Harry Potter (Ministerio da Magia), Nintendo, How to Train Your Dragon. Muito concorrido."},
+    {time:"", text:"Child Swap para atracoes que o bebe nao pode entrar", tip:"Grupo na fila, avisa Child Swap, adulto espera em sala, segundo adulto vai direto sem pegar fila."},
+    {time:"", text:"Poncho de chuva + snacks + garrafinhas de agua — economiza US$50-100/dia"},
+  ]},
+  "2026-04-21": {title:"Dia 2 — Compras + Skyliner Disney", city:"or", items:[
+    {time:"Manha", text:"Compras nos outlets — The Loop, Outlet Marketplace, Dillards Clearance", tip:"Walmart Kissimmee (2855 N Old Lake Wilson Rd): souvenirs Disney mais baratos que nos parques."},
+    {time:"", text:"Primark no Florida Mall — produtos Disney com otimos precos"},
+    {time:"Tarde", text:"Skyliner Disney (teleferido gratuito) — parar no Art of Animation Hotel (cenario de Carros!)"},
+    {time:"Final do dia", text:"Encontro com Tico e Teco com marshmallow (confirmar no app Disney)"},
+    {time:"", text:"Gideons Bakehouse: East End Market (sem a fila enorme da Disney Springs)"},
+  ]},
+  "2026-04-22": {title:"Dia 3 — Parque Aquatico", city:"or", items:[
+    {time:"", text:"Adventure Island ou Typhoon Lagoon / Blizzard Beach", tip:"Protetor solar resistente a agua. Reaplicar a cada 2h. Carrinho leve para o bebe descansar."},
+    {time:"", text:"2 roupas de banho por pessoa + barraquinha de sombra para o bebe"},
+  ]},
+  "2026-04-23": {title:"Dia 4 — Magic Kingdom", city:"or", items:[
+    {time:"45-60min antes", text:"Chegar antes da abertura — filas 3-5x menores na primeira hora"},
+    {time:"Abertura", text:"Ativar Lightning Lane Multi Pass no app Disney", tip:"Reserve primeiro: Seven Dwarfs Mine Train, Tron (107cm min.), Space Mountain (112cm min.)."},
+    {time:"", text:"Rider Switch para atracoes com altura minima", tip:"Va com o bebe a entrada, avise o Cast Member. Segundo adulto usa Lightning Lane depois."},
+    {time:"", text:"Festival of Fantasy (desfile) — posicionar 30-45min antes"},
+    {time:"Noite", text:"Happily Ever After — fogos + projecoes no castelo. Main Street U.S.A."},
+    {time:"", text:"Disney Springs: Gideons, The Ganachery, Ghirardelli, Everglazed Donuts, Amorettes"},
+  ]},
+  "2026-04-24": {title:"Dia 5 — Livre + Universal CityWalk", city:"or", items:[
+    {time:"Manha/Tarde", text:"Dia livre — piscina, descanso, compras"},
+    {time:"18h+", text:"Universal CityWalk — estacionar APOS 18h (gratuito!)", tip:"Seguir em direcao ao lago na entrada dos parques."},
+    {time:"", text:"Taxi aquatico gratuito pelo lago ate os hoteis da Universal"},
+    {time:"", text:"Portofino Bay Hotel — estilo Italia. Mama Dellas para jantar"},
+  ]},
+  "2026-04-25": {title:"Dia 6 — Universal Studios + Islands", city:"or", items:[
+    {time:"45-60min antes", text:"Chegar antes da abertura"},
+    {time:"", text:"Universal Studios Florida + Islands of Adventure"},
+    {time:"", text:"Wizarding World of Harry Potter — imperdivel!"},
+    {time:"", text:"Child Swap em todas as atracoes com altura minima"},
+  ]},
+  "2026-04-26": {title:"Dia 7 — Cafe com Mickey + Parque Aquatico", city:"or", items:[
+    {time:"8h35", text:"Cafe da manha com Mickey — RESERVA OBRIGATORIA", tip:"Character Dining esgota meses antes. Confirmar no app My Disney Experience."},
+    {time:"Tarde", text:"Parque aquatico Disney (Typhoon Lagoon ou Blizzard Beach)"},
+  ]},
+  "2026-04-27": {title:"Dia 8 — Epic Universe + Jantar T-Rex", city:"or", items:[
+    {time:"Manha", text:"Epic Universe — segunda visita"},
+    {time:"Almoco", text:"Cicis Pizza — US$10,90 a vontade (seg/ter: US$4,99)"},
+    {time:"20h", text:"T-Rex Restaurant, Disney Springs — reserva necessaria"},
+  ]},
+  "2026-04-28": {title:"Dia 9 — Celebration + Partida", city:"or", items:[
+    {time:"Manha-16h", text:"Cidade de Celebration — 30min de Orlando, projetada pelo Walt Disney", tip:"Cidadezinha charmosa, perfeita para manha tranquila com as criancas."},
+    {time:"", text:"Abastecer antes de devolver o carro no aeroporto (MCO)", tip:"Postos dentro do aeroporto cobram 50-80% mais. Use GasBuddy na rota."},
+    {time:"16h", text:"Check-in para o voo de retorno"},
+  ]},
+};
 
-const DOW = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+// Build calendar
+const DOW = ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"];
+function pad(n) { return String(n).padStart(2,"0"); }
+function dk(y,m,d) { return `${y}-${pad(m+1)}-${pad(d)}`; }
 
-function pad(n){ return String(n).padStart(2,'0'); }
-function dateKey(y,m,d){ return `${y}-${pad(m+1)}-${pad(d)}`; }
-
-function buildCalendar(){
-  const wrap = document.getElementById('cal-wrap');
-  // Build April 2026
-  const y=2026, m=3; // April
-  const label = 'Abril 2026';
-  const firstDay = new Date(y, m, 1).getDay();
-  const daysInMonth = new Date(y, m+1, 0).getDate();
-
-  let html = `<div class="cal-month">
-    <div class="cal-month-header"><span class="cal-month-label">${label}</span><span style="font-size:11px;font-family:'DM Mono',monospace;color:var(--text3)">Toque num dia</span></div>
-    <div class="cal-grid">`;
-  DOW.forEach(d => html += `<div class="cal-dow">${d}</div>`);
-  for(let i=0;i<firstDay;i++) html += `<div class="cal-day empty"></div>`;
-  for(let d=1;d<=daysInMonth;d++){
-    const key = dateKey(y,m,d);
-    const hasEvent = !!itinerary[key];
-    const city = dayCity[key];
-    const cityC = city ? cityColors[city] : null;
-    html += `<div class="cal-day${hasEvent?' has-event':''}" onclick="${hasEvent?`openDay('${key}')`:''}">
-      <div class="cal-day-num" style="${hasEvent&&cityC?`background:${cityC.bg};color:${cityC.t}`:''}">
-        ${d}
-      </div>
-      ${hasEvent?`<div class="cal-dot" style="${cityC?`background:${cityC.t}`:''};opacity:.7"></div>`:''}
-    </div>`;
+(function() {
+  const y=2026, m=3, fd=new Date(y,m,1).getDay(), days=new Date(y,m+1,0).getDate();
+  const cal = document.getElementById("cal");
+  DOW.forEach(d => {
+    const el = document.createElement("div");
+    el.className = "cal-dow";
+    el.textContent = d;
+    cal.appendChild(el);
+  });
+  for (let i=0; i<fd; i++) cal.appendChild(document.createElement("div"));
+  for (let d=1; d<=days; d++) {
+    const k = dk(y,m,d);
+    const city = dayCity[k];
+    const cm = city ? CM[city] : null;
+    const has = !!itin[k];
+    const div = document.createElement("div");
+    div.className = "cd" + (has ? " ev clk" : "") + (cm ? " "+cm.c : "");
+    const num = document.createElement("div");
+    num.className = "cdn";
+    num.textContent = d;
+    const pip = document.createElement("div");
+    pip.className = "cdp";
+    div.appendChild(num);
+    div.appendChild(pip);
+    if (has) {
+      div.addEventListener("click", () => openDay(k));
+    }
+    cal.appendChild(div);
   }
-  html += `</div></div>`;
+})();
 
-  // Legend
-  html += `<div style="background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:14px 16px;margin-bottom:12px">
-    <div style="font-size:11px;font-family:'DM Mono',monospace;color:var(--text3);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em">Legenda</div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px">`;
-  Object.entries(cityColors).forEach(([k,v]) => {
-    html += `<span style="font-size:11px;font-weight:500;padding:3px 10px;border-radius:99px;background:${v.bg};color:${v.t}">${v.label}</span>`;
-  });
-  html += `</div></div>`;
-
-  // Tips card
-  html += `<div style="background:var(--tip);border:1px solid var(--tip-border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px">
-    <div style="font-size:11px;font-family:'DM Mono',monospace;color:var(--tip-t);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">📱 Apps essenciais</div>
-    <div style="font-size:13px;color:var(--tip-t);line-height:1.6">
-      <b>My Disney Experience</b> — ingressos, Lightning Lane e tempos de fila<br>
-      <b>Universal Orlando</b> — ingressos e Express Pass<br>
-      <b>GasBuddy</b> — encontrar o posto mais barato, pagar pelo app<br>
-      <b>Roadtrippers</b> — planejamento de rotas de estrada<br>
-      <b>MTA NYC</b> — metrô de Nova York
-    </div>
-  </div>`;
-
-  wrap.innerHTML = html;
+function openDay(k) {
+  const ev = itin[k]; if (!ev) return;
+  const [y,m,d] = k.split("-").map(Number);
+  const cm = CM[ev.city] || CM.hm;
+  const ds = new Date(y,m-1,d).toLocaleDateString("pt-BR", {weekday:"long",day:"numeric",month:"long"});
+  document.getElementById("m-stripe").style.background = `linear-gradient(90deg,${cm.color},${cm.light})`;
+  document.getElementById("m-city").style.color = cm.color;
+  document.getElementById("m-city").textContent = cm.label;
+  document.getElementById("m-title").textContent = ev.title;
+  document.getElementById("m-date").textContent = ds;
+  document.getElementById("m-body").innerHTML = ev.items.map(it =>
+    `<div class="ev-row">
+      <div class="ev-time" style="color:${cm.color}">${it.time}</div>
+      <div class="ev-txt">${it.text}${it.tip ? `<div class="ev-tip">${it.tip}</div>` : ""}</div>
+    </div>`
+  ).join("");
+  document.getElementById("overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
-function openDay(key){
-  const ev = itinerary[key];
-  if(!ev) return;
-  const [y,m,d] = key.split('-').map(Number);
-  const date = new Date(y,m-1,d);
-  const fmtDate = date.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  const city = dayCity[key];
-  const cityC = city ? cityColors[city] : null;
+function closeBg(e) { if (e.target === document.getElementById("overlay")) closeModal(); }
+function closeModal() { document.getElementById("overlay").classList.remove("open"); document.body.style.overflow = ""; }
 
-  document.getElementById('m-date').textContent = fmtDate;
-  document.getElementById('m-title').textContent = ev.title;
-  const cityTag = document.getElementById('m-city-tag');
-  cityTag.innerHTML = cityC ? `<span class="modal-city-tag" style="background:${cityC.bg};color:${cityC.t}">${cityC.label}</span>` : '';
-
-  let body = `<div class="modal-section"><div class="modal-section-title">Programação do dia</div>`;
-  ev.items.forEach(item => {
-    body += `<div class="modal-item">
-      <div class="modal-item-time">${item.time||''}</div>
-      <div>
-        <div style="font-size:13.5px;line-height:1.45">${item.text}</div>
-        ${item.tip?`<div class="modal-tip">💡 ${item.tip}</div>`:''}
-      </div>
-    </div>`;
-  });
-  body += `</div>`;
-  document.getElementById('m-body').innerHTML = body;
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(e){
-  if(e.target === document.getElementById('modal')) closeModalBtn();
-}
-function closeModalBtn(){
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function showTab(id){
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    const ids = ['roteiro','checklist'];
-    b.classList.toggle('active', ids[i]===id);
-  });
-  document.querySelectorAll('.tab-content').forEach(c=>{
-    c.classList.toggle('active', c.id==='tab-'+id);
+function showTab(id) {
+  ["roteiro","checklist","dicas"].forEach((t,i) => {
+    document.getElementById("tab-"+t).classList.toggle("active", t===id);
+    document.querySelectorAll(".tab-btn")[i].classList.toggle("active", t===id);
   });
 }
 
-// ==================== CHECKLIST ====================
-const STORE_KEY = 'checklist-eua-v3';
+// Checklist
+const SK = "viajem-eua-v8";
+const SS = [
+  {bg:"#dbeafe",ac:"#1d4ed8"},{bg:"#f0fdf4",ac:"#15803d"},{bg:"#f8fafc",ac:"#475569"},
+  {bg:"#fff7ed",ac:"#b45309"},{bg:"#f0fdf4",ac:"#059669"},{bg:"#fef2f2",ac:"#dc2626"},
+  {bg:"#f5f3ff",ac:"#7c3aed"},{bg:"#fef2f2",ac:"#dc2626"},{bg:"#dbeafe",ac:"#1d4ed8"},
+  {bg:"#f0fdf4",ac:"#059669"},{bg:"#fff7ed",ac:"#d97706"},{bg:"#fef2f2",ac:"#dc2626"},
+];
 const clData = [
-  { id:'docs', icon:'📄', title:'Documentos — adultos e crianças', items:[
-    {text:'Passaporte de TODOS válido por pelo menos 6 meses além do retorno',tags:['docs'],tip:'Brasileiros têm isenção da regra dos 6 meses, mas 6 meses de sobra evita problemas em conexões.'},
-    {text:'Visto americano B1/B2 de TODOS — inclusive bebê de 1 ano (sem exceção)',tags:['docs'],tip:'Desde set/2025 TODAS as idades precisam de entrevista presencial. Custo: US$185/pessoa. Agende com antecedência.'},
-    {text:'Certidão de nascimento das crianças (original + cópia)',tags:['docs']},
-    {text:'Ambos os pais viajando juntos: nenhuma autorização adicional é necessária',tags:['docs'],tip:'Se apenas UM dos pais viajasse, seria necessária autorização notarial do outro. Viajando os dois, este item está resolvido.'},
-    {text:'Comprovante de reserva de hotel com endereços de TODAS as cidades',tags:['docs'],tip:'Na imigração perguntam o endereço onde você ficará. Tenha impresso ou facilmente acessível.'},
-    {text:'Passagens aéreas (ida, volta e voos domésticos)',tags:['docs']},
-    {text:'Seguro viagem com cobertura médica nos EUA para toda a família',tags:['docs'],tip:'Uma consulta médica nos EUA pode custar US$500+. Para bebê, cobertura de pelo menos US$50.000.'},
-    {text:'CNH internacional — obrigatória para alugar carro. Cadeirinha é lei nos EUA.',tags:['docs']},
-    {text:'Cópia digital de todos os documentos salva no e-mail e nuvem',tags:['docs']},
-    {text:'Conta Nomad ou Wise configurada — sem IOF (6,38%) em cada compra',tags:['docs'],tip:'Em US$5.000 de gastos, são R$1.800+ economizados só de IOF.'},
-    {text:'Dólares em espécie para gorjetas (US$1–5 por serviço é padrão)',tags:['docs']},
-    {text:'Endereços dos hospitais/urgências próximos aos hotéis de cada cidade',tags:['docs']},
-    {text:'Comprovante de vínculos com o Brasil (holerite, matrícula escolar das crianças)',tags:['docs'],tip:'O agente de imigração pode perguntar sobre motivos de retorno ao Brasil.'},
+  {id:"docs",icon:"📄",title:"Documentos — toda a familia",items:[
+    {text:"Passaporte de TODOS — validade 6+ meses alem do retorno",tags:["dc"],tip:"Brasileiros tem isencao da regra dos 6 meses, mas 6 meses de sobra evita problemas em conexoes."},
+    {text:"Visto B1/B2 de TODOS — inclusive o Dudu (sem excecao)",tags:["dc"],tip:"Desde set/2025 todas as idades precisam de entrevista presencial. US$185/pessoa."},
+    {text:"Certidao de nascimento das criancas — original + copia",tags:["dc"]},
+    {text:"Ambos os pais viajando: nenhuma autorizacao adicional necessaria",tags:["dc"],tip:"Se apenas UM dos pais fosse, seria necessaria autorizacao notarial do outro genitor."},
+    {text:"Comprovante de reserva com enderecos de TODAS as cidades",tags:["dc"],tip:"Na imigracao perguntam o endereco onde ficara. Ter impresso ou acessivel."},
+    {text:"Passagens aereas — ida, volta e voos domesticos",tags:["dc"]},
+    {text:"Seguro viagem com cobertura medica para toda a familia",tags:["dc"],tip:"Consulta medica nos EUA: US$500+. Para bebe, minimo US$50.000 de cobertura."},
+    {text:"CNH Internacional — obrigatoria para alugar carro nos EUA",tags:["dc"],tip:"CNH brasileira sozinha nao e aceita. Emitir no DETRAN antes. Valida por 6 meses."},
+    {text:"Copia digital de todos os documentos — e-mail e nuvem",tags:["dc"]},
+    {text:"Conta Nomad ou Wise configurada — sem IOF (6,38%)",tags:["dc"],tip:"Em US$5.000 de gastos = R$1.800+ economizados so de IOF."},
+    {text:"Dolares em especie para gorjetas (US$1-5 por servico)",tags:["dc"]},
+    {text:"Enderecos de hospitais/urgencias proximos a cada hotel",tags:["dc"]},
+    {text:"Comprovante de vinculo com o Brasil — holerite, matricula escolar",tags:["dc"]},
   ]},
-  { id:'aeroporto', icon:'✈️', title:'Aeroporto — dicas importantes', items:[
-    {text:'Informar à companhia que viaja com bebê menor de 2 anos: despacho gratuito do carrinho + comida/bebida + embarque prioritário'},
-    {text:'Se pedirem para despachar bagagem de mão: pedir formulário de Declaração Especial para aumentar limite de indenização'},
-    {text:'Totens de carga USB: usar adaptador próprio — não conectar apenas o cabo (risco de roubo de dados)'},
-    {text:'Check-in online feito com antecedência para todos os voos'},
-    {text:'Chegada com 3h de antecedência para voo internacional'},
-    {text:'GasBuddy instalado para encontrar os postos mais baratos nos EUA'},
-    {text:'Roadtrippers instalado para planejamento de rotas'},
+  {id:"carro",icon:"🚗",title:"Aluguel de Carro (FLL a MCO)",items:[
+    {text:"CNH Internacional valida — imprescindivel (CNH brasileira sozinha nao e aceita)",tip:"Emita no DETRAN antes da viagem. Valida por 6 meses."},
+    {text:"Reservar o carro com antecedencia — Rentalcars, Kayak ou Expedia Cars",tip:"Precos sobem muito perto da data. Reserve 1-2 meses antes."},
+    {text:"Verificar seguro CDW — locadora ou cartao de credito",tip:"Alguns cartoes Visa Infinite e Mastercard Black ja incluem seguro para carro alugado."},
+    {text:"Cadeirinha de bebe confirmada — reservar ou levar a propria",tip:"Disponibilidade nas locadoras e incerta. Levar a propria economiza US$10-15/dia."},
+    {text:"Usar cartao de CREDITO (nao debito) na retirada do carro",tip:"Locadoras bloqueiam caucao. Com debito bloqueia saldo real; com credito nao impacta."},
+    {text:"Fotografar o carro antes de sair — documentar arranhoes e amassados"},
+    {text:"Instalar GasBuddy para encontrar postos mais baratos na rota",tip:"Permite pagar pelo app e evita filas no caixa."},
+    {text:"E-ZPass / SunPass para pedagios eletronicos",tip:"A Florida Turnpike e toda eletronica. Locadoras cobram taxa alta pelo sistema proprio."},
+    {text:"Verificar limites de velocidade: Turnpike 70mph (112km/h), urbanas 35-45mph"},
+    {text:"SEMPRE abastecer antes de devolver o carro",tip:"Postos dentro dos aeroportos cobram 50-80% mais. Use GasBuddy na rota de devolucao."},
+    {text:"Rota: Fort Lauderdale (FLL) a Orlando (MCO) pela Florida Turnpike (~4h)"},
   ]},
-  { id:'roupas', icon:'👕', title:'Roupas e acessórios', items:[
-    {text:'Camisetas (NY pode ser frio, Orlando e Miami quente)'},
-    {text:'Calças jeans ou calça leve'},
-    {text:'Shorts ou bermuda (Orlando e Miami)',tags:['orlando','miami']},
-    {text:'Casaco ou jaqueta para NY e ar condicionado',tags:['ny']},
-    {text:'Agasalho ou moletom'},
-    {text:'Roupas íntimas e meias para todos os dias'},
-    {text:'Pijamas'},
-    {text:'Roupa de banho — 2 por pessoa (parques aquáticos + praia)',tags:['miami','orlando']},
-    {text:'Tênis confortável para caminhadas longas — parques exigem 15.000+ passos/dia',tags:['ny','orlando'],tip:'Teste os tênis antes de viajar. Um tênis inadequado vai resultar em criança no colo nos parques.'},
-    {text:'Chinelo ou sandália'},
-    {text:'Sapato social leve (opcional — Broadway ou restaurante em NY)',tags:['ny']},
-    {text:'Boné ou chapéu para o sol em Orlando e Miami',tags:['orlando','miami']},
-    {text:'Óculos de sol'},
-    {text:'Poncho de chuva leve descartável para cada um (Orlando)',tags:['orlando'],tip:'Chuva quase todo dia à tarde em Orlando. Ponchos dentro dos parques custam US$10–15. No Brasil saem menos de R$5.'},
+  {id:"aeroporto",icon:"✈️",title:"Aeroporto — dicas importantes",items:[
+    {text:"Bebe Dudu: despacho gratuito do carrinho + comida/bebida + embarque prioritario"},
+    {text:"Se pedirem para despachar bagagem de mao: pedir Formulario de Declaracao Especial"},
+    {text:"Totens USB: usar adaptador proprio — risco de roubo de dados com cabo direto"},
+    {text:"Check-in online feito com antecedencia para todos os voos"},
+    {text:"Chegada com 3h de antecedencia para voo internacional"},
   ]},
-  { id:'saude', icon:'💊', title:'Saúde e higiene', items:[
-    {text:'Protetor solar FPS 50+ para todos',tags:['orlando','miami'],tip:'Nos EUA é muito mais caro. Leve do Brasil.'},
-    {text:'Repelente'},
-    {text:'Antialérgico adulto e infantil'},
-    {text:'Termômetro digital'},
-    {text:'Medicamentos contínuos com receita traduzida para inglês'},
-    {text:'Protetor labial com FPS'},
-    {text:'Kit pronto-socorro: band-aids, antisséptico, gaze'},
-    {text:'Remédio para enjoo adulto e infantil (consultar pediatra)'},
-    {text:'Escova, pasta, fio dental e enxaguante para todos'},
-    {text:'Shampoo, condicionador e sabonete (máx 100ml na carry-on)'},
-    {text:'Desodorante'},
-    {text:'Hidratante (ar seco de aviões e ar condicionado resseca a pele)'},
+  {id:"roupas",icon:"👕",title:"Roupas e acessorios",items:[
+    {text:"Camisetas — NY pode ser frio, Orlando e Miami quente"},
+    {text:"Calcas jeans ou calca leve"},
+    {text:"Shorts ou bermuda",tags:["or","mi"]},
+    {text:"Casaco ou jaqueta para NY e ar condicionado forte",tags:["ny"]},
+    {text:"Agasalho ou moletom"},
+    {text:"Roupas intimas e meias para todos os dias"},
+    {text:"Pijamas"},
+    {text:"Roupa de banho — 2 por pessoa",tags:["mi","or"]},
+    {text:"Tenis confortavel — parques exigem 15.000+ passos/dia",tags:["ny","or"],tip:"Teste os tenis antes de viajar. Tenis inadequado = crianca no colo."},
+    {text:"Chinelo ou sandalia"},
+    {text:"Bone ou chapeu para o sol",tags:["or","mi"]},
+    {text:"Oculos de sol"},
+    {text:"Poncho de chuva descartavel — um por pessoa",tags:["or"],tip:"Orlando chove quase todo dia a tarde. Nos parques: US$10-15. No Brasil: menos de R$5."},
   ]},
-  { id:'tech', icon:'🔌', title:'Tecnologia e eletrônicos', items:[
-    {text:'Adaptador de tomada tipo A/B (EUA usa 2 pinos chatos, 110V)',tip:'Compre antes — nos aeroportos é muito mais caro.'},
-    {text:'Smartphone com Google Maps, app Disney e app Universal baixados'},
-    {text:'Carregadores de todos os aparelhos'},
-    {text:'Powerbank 10.000mAh+ — dias de parque drenam a bateria',tip:'O app Disney exige bateria o dia todo para Lightning Lane. Powerbank é essencial.'},
-    {text:'Fone de ouvido (voos longos com crianças)'},
-    {text:'Câmera ou espaço de armazenamento suficiente no celular'},
-    {text:'Cartão de memória extra'},
-    {text:'Notebook ou tablet (conteúdo offline para crianças no hotel)'},
-    {text:'Chip internacional ou eSIM com dados nos EUA',tip:'eSIM é mais prático — sem trocar chip físico. Pesquise Holafly, Airalo ou Maya Mobile.'},
+  {id:"saude",icon:"💊",title:"Saude e higiene",items:[
+    {text:"Protetor solar FPS 50+ para todos",tags:["or","mi"],tip:"Nos EUA e muito mais caro. Leve do Brasil."},
+    {text:"Repelente"},
+    {text:"Antialergico adulto e infantil"},
+    {text:"Termometro digital"},
+    {text:"Medicamentos continuos com receita traduzida para ingles"},
+    {text:"Protetor labial com FPS"},
+    {text:"Kit pronto-socorro — band-aids, antisseptico, gaze"},
+    {text:"Remedio para enjoo adulto e infantil"},
+    {text:"Itens de higiene pessoal — max 100ml por frasco na carry-on"},
+    {text:"Hidratante corporal"},
   ]},
-  { id:'bebe', icon:'🍼', title:'Bebê (1 ano — Dudu)', items:[
-    {text:'Fraldas — estoque para os primeiros dias (depois compra no Target/Walmart)',tip:'Pampers e Huggies fáceis de encontrar nos EUA. Leve pelo menos 3 dias de estoque.'},
-    {text:'Lenços umedecidos — vários pacotes'},
-    {text:'Pomada para assadura'},
-    {text:'Leite em pó ou fórmula para toda a viagem',tip:'Marcas brasileiras podem não ter equivalente nos EUA. Leve a quantidade total necessária.'},
-    {text:'Mamadeiras e copinhos de transição'},
-    {text:'Chupeta (2 extras — fácil de perder)'},
-    {text:'Papinhas em sachê para o avião e primeiros dias'},
-    {text:'Babador e colher de bebê'},
-    {text:'Roupas extras — mínimo 2 trocas por dia'},
-    {text:'Body de manga longa para ar condicionado do avião e hotéis'},
-    {text:'Cobertor leve para o voo'},
-    {text:'Carrinho de bebê dobrável leve',tip:'Disney e Universal têm estacionamento de carrinhos. Carrinho leve cabe no avião.'},
-    {text:'Cadeirinha de carro — obrigatória por lei ao alugar carro nos EUA',tip:'Algumas locadoras alugam (US$10–15/dia) mas disponibilidade é incerta. Levar a sua é mais seguro.'},
-    {text:'Mochila canguru ou sling (útil quando carrinho não entra nas atrações)'},
-    {text:'Termômetro digital'},
-    {text:'Dipirona gotas + ibuprofeno infantil (com receita traduzida)'},
-    {text:'Antialérgico infantil em gotas'},
-    {text:'Soro fisiológico (ar condicionado resseca muito)'},
-    {text:'Protetor solar mineral/físico para bebê FPS 50+'},
-    {text:'Brinquedos favoritos + mordedor para o avião'},
-    {text:'Monitor de bebê portátil para os hotéis'},
-    {text:'Protetores de tomada — compre 4–6',tip:'Tomadas americanas ficam acessíveis para bebês. Hotéis têm muitas tomadas.'},
+  {id:"bebe",icon:"🍼",title:"Bebe Dudu (1 ano)",items:[
+    {text:"Fraldas — estoque para 3+ dias",tip:"Pampers e Huggies faceis no Target/Walmart."},
+    {text:"Lencos umedecidos — varios pacotes"},
+    {text:"Pomada para assadura"},
+    {text:"Leite em po ou formula para toda a viagem",tip:"Marcas brasileiras podem nao ter equivalente. Leve a quantidade total necessaria."},
+    {text:"Mamadeiras e copinhos de transicao"},
+    {text:"Chupeta — 2 extras"},
+    {text:"Papinhas em sache para o aviao e primeiros dias"},
+    {text:"Babador e colher de bebe"},
+    {text:"Roupas extras — 2 trocas minimas por dia"},
+    {text:"Body de manga longa para ar condicionado"},
+    {text:"Carrinho de bebe dobravei leve"},
+    {text:"Cadeirinha de carro certificada",tip:"Obrigatoria por lei ao dirigir nos EUA. Verificar se a locadora inclui."},
+    {text:"Mochila canguru ou sling"},
+    {text:"Dipirona gotas + ibuprofeno infantil com receita traduzida"},
+    {text:"Antialergico infantil + soro fisiologico nasal"},
+    {text:"Protetor solar mineral FPS 50+ para bebe"},
+    {text:"Monitor de bebe portatil para os hoteis"},
+    {text:"Protetores de tomada — pelo menos 6",tip:"Tomadas americanas sao acessiveis para bebes."},
   ]},
-  { id:'crianca5', icon:'🧒', title:'Criança (5 anos)', items:[
-    {text:'Passaporte e visto americano próprios'},
-    {text:'Roupas confortáveis com velcro/elástico — fáceis de vestir'},
-    {text:'Tênis com bom amortecimento para dias de parque',tip:'Parques são enormes. Tênis ruim = criança no colo o dia todo.'},
-    {text:'Sandália leve para Miami e passeios'},
-    {text:'Roupa de banho + protetor solar infantil FPS 50+',tags:['orlando','miami']},
-    {text:'Boné ou chapéu para o sol',tags:['orlando','miami']},
-    {text:'Óculos de sol infantil'},
-    {text:'Mochilinha própria com nome e contato',tip:'Se a criança se perder nos parques, deve procurar um Cast Member (funcionário). Eles são treinados para isso.'},
-    {text:'Pulseirinha de identificação com telefone internacional'},
-    {text:'Snacks para filas e deslocamentos'},
-    {text:'Tablet/celular com filmes e jogos offline para o voo'},
-    {text:'Fone de ouvido infantil com limitador de volume'},
-    {text:'Travesseirinho de pescoço para o voo'},
-    {text:'Remédio para enjoo infantil — consultar pediatra'},
-    {text:'Antitérmico infantil na dose certa para a idade'},
-    {text:'Band-aids infantis com personagem'},
-    {text:'Verificar altura mínima das atrações Disney/Universal antecipadamente',tags:['orlando'],tip:'Tron Lightcycle: 107cm. Space Mountain: 112cm. Prepare a criança emocionalmente caso não atinja a altura.'},
+  {id:"crianca",icon:"🧒",title:"Crianca de 5 anos",items:[
+    {text:"Passaporte e visto americano proprios"},
+    {text:"Roupas confotaveis com velcro/elastico"},
+    {text:"Tenis com amortecimento para dias de parque"},
+    {text:"Roupa de banho + protetor solar FPS 50+",tags:["or","mi"]},
+    {text:"Bone ou chapeu para o sol",tags:["or","mi"]},
+    {text:"Mochilinha com nome e contato gravado",tip:"Se perder nos parques: procurar um Cast Member. Treinados para isso."},
+    {text:"Pulseirinha de identificacao com telefone internacional"},
+    {text:"Tablet com filmes e jogos offline para o voo"},
+    {text:"Fone com limitador de volume"},
+    {text:"Snacks para filas e deslocamentos"},
+    {text:"Antitermico infantil na dose correta"},
+    {text:"Verificar altura minima das atracoes com antecedencia",tags:["or"],tip:"Tron: 107cm. Space Mountain: 112cm. Prepare a crianca emocionalmente."},
   ]},
-  { id:'parques', icon:'🏰', title:'Parques Orlando — planejamento', items:[
-    {text:'Comprar TODOS os ingressos no Brasil antes de viajar',tags:['orlando'],tip:'Evita 6,38% de IOF + dá para parcelar em reais. Nunca comprar de terceiros no Marketplace.'},
-    {text:'Verificar promoção 4-Park Magic Disney 2026: 4 parques pelo preço de 3',tags:['orlando'],tip:'Válida jan–mai 2026. Economiza o valor de um parque por pessoa.'},
-    {text:'Vincular TODOS os ingressos no app My Disney Experience',tags:['orlando'],tip:'Sem vincular, não consegue usar Lightning Lane nem ver tempos de fila.'},
-    {text:'Vincular ingressos no app Universal Orlando',tags:['orlando']},
-    {text:'Reservar café da manhã com o Mickey (dia 26/04 às 8h35)',tags:['orlando'],tip:'Character Dining esgota meses antes. Confirmar no app My Disney Experience.'},
-    {text:'Reservar jantar no T-Rex para 27/04 às 20h',tags:['orlando'],tip:'Reserva essencial — restaurante temático de dinossauros muito concorrido.'},
-    {text:'Estratégia de chegar 45–60 min antes da abertura TODO dia de parque',tags:['orlando'],tip:'Primeira hora tem filas 3–5x menores. Com bebê e criança de 5 anos, isso substitui boa parte do Lightning Lane.'},
-    {text:'Entender Lightning Lane (Multi Pass + Single Pass) da Disney',tags:['orlando'],tip:'Multi Pass: reserva várias atrações sequencialmente. Single Pass: fura-fila individual para as atrações mais disputadas (Tron, Guardians). Preço dinâmico.'},
-    {text:'Usar Rider Switch na Disney para atrações que o bebê não pode entrar',tags:['orlando'],tip:'Vá com o bebê até a entrada, avise o Cast Member. O segundo adulto usa fila Lightning Lane depois, quase sem espera.'},
-    {text:'Usar Child Swap na Universal (funciona de forma similar ao Rider Switch)',tags:['orlando']},
-    {text:'Usar fila virtual gratuita (Virtual Queue) — reservar logo ao abrir o parque',tags:['orlando'],tip:'Guardians of the Galaxy: Cosmic Rewind usa Virtual Queue gratuita. Esgota em minutos da abertura.'},
-    {text:'Levar snacks e garrafinhas de água todos os dias',tags:['orlando'],tip:'Comida nos parques: US$15–25/prato. Snacks de fora economizam US$50–100 por dia para família.'},
-    {text:'Verificar horários dos desfiles e posicionar-se 30–45 min antes',tags:['orlando']},
-    {text:'Souvenirs: não comprar dentro dos parques — Walmart Kissimmee tem os mesmos por muito menos',tags:['orlando'],tip:'Walmart: 2855 N Old Lake Wilson Rd, Kissimmee, FL 34747'},
-    {text:'Skyliner Disney (teleférico) — gratuito, vista incrível, parar no Art of Animation',tags:['orlando']},
-    {text:'Universal CityWalk: estacionar após 18h para não pagar estacionamento',tags:['orlando']},
+  {id:"tech",icon:"🔌",title:"Tecnologia e eletronicos",items:[
+    {text:"Adaptador de tomada tipo A/B — EUA usa 2 pinos chatos, 110V",tip:"Compre antes — nos aeroportos e muito mais caro."},
+    {text:"Smartphone com Google Maps, app Disney, Universal e GasBuddy"},
+    {text:"Carregadores de todos os aparelhos"},
+    {text:"Powerbank 10.000mAh+",tip:"App Disney precisa de bateria o dia todo para Lightning Lane."},
+    {text:"Fone de ouvido para os voos"},
+    {text:"Chip internacional ou eSIM com dados nos EUA",tip:"Holafly, Airalo ou Maya Mobile."},
+    {text:"Mapa offline da Florida baixado no Google Maps",tip:"Seguranca extra para trechos de rodovia com sinal fraco."},
   ]},
-  { id:'ny', icon:'🗽', title:'Nova York — dicas e lembretes', items:[
-    {text:'MetroCard recarregável: comprar no aeroporto ou estação',tags:['ny'],tip:'Criança até 1m11cm não paga no metrô e passa por baixo da catraca. Carrinho passa pela porta lateral.'},
-    {text:'Verificar elevadores nas estações do metrô nos trajetos com carrinho',tags:['ny'],tip:'Nem todas as estações têm elevador. Consulte o mapa ADA no site do MTA antes.'},
-    {text:'Reservar Estátua da Liberdade com antecedência — primeiro barco no Battery Park',tags:['ny']},
-    {text:'Lojas baratas para souvenir: Five Below (tudo até US$5), Grand Slam embaixo da escada da Times Square (US$0,99)',tags:['ny']},
-    {text:'Compras fora de Times Square — TJ Maxx, Marshalls, Century 21',tags:['ny'],tip:'Times Square tem preços absurdos. Bairros como Midtown East são 30–50% mais baratos.'},
-    {text:'CityPASS NYC se visitar 4+ atrações — até 40% de desconto',tags:['ny']},
-    {text:'Melhores banheiros perto de Times Square: Hotel Hard Rock, Loja da Disney, Hotel Marriott Marquis lobby 8º andar',tags:['ny']},
-    {text:'Comida barata e boa: food trucks, Chelsea Market, Grand Central Market, delis',tags:['ny'],tip:'Restaurante em NY: US$20–40/pessoa. Food truck: US$10–15. Deli: excelente custo-benefício.'},
+  {id:"parques",icon:"🏰",title:"Parques Orlando — planejamento",items:[
+    {text:"Comprar TODOS os ingressos no Brasil antes de viajar",tags:["or"],tip:"Evita IOF 6,38% + parcelamento em reais. Nunca comprar de terceiros."},
+    {text:"Promocao 4-Park Magic Disney 2026: 4 parques pelo preco de 3",tags:["or"],tip:"Valida jan-mai 2026."},
+    {text:"Vincular ingressos no app My Disney Experience",tags:["or"]},
+    {text:"Reservar cafe da manha com Mickey — 26/04 as 8h35",tags:["or"],tip:"Character Dining esgota meses antes."},
+    {text:"Reservar jantar T-Rex — 27/04 as 20h",tags:["or"]},
+    {text:"Chegar 45-60min antes da abertura todo dia",tags:["or"],tip:"Primeira hora: filas 3-5x menores."},
+    {text:"Rider Switch (Disney) para atracoes com altura minima",tags:["or"]},
+    {text:"Child Swap (Universal) — similar ao Rider Switch",tags:["or"]},
+    {text:"Universal CityWalk: estacionar apos 18h (gratuito)",tags:["or"]},
+    {text:"Skyliner Disney — gratuito, parar no Art of Animation Hotel",tags:["or"]},
+    {text:"Souvenirs: Walmart Kissimmee (2855 N Old Lake Wilson Rd)",tags:["or"]},
   ]},
-  { id:'miami', icon:'🏖️', title:'Miami — dicas e lembretes', items:[
-    {text:'Roupa de praia e canga para toda a família',tags:['miami']},
-    {text:'Protetor solar resistente à água — reaplicar a cada 2h',tags:['miami']},
-    {text:'Sandália de praia (areia de South Beach fica extremamente quente)',tags:['miami']},
-    {text:'Barraquinha portátil para dar sombra ao bebê',tags:['miami'],tip:'Sol de Miami entre 10h–15h é muito intenso para bebê.'},
-    {text:'Aluguel de carro — praticamente obrigatório com crianças em Miami',tags:['miami'],tip:'Reserve antecipado pelo Rentalcars ou Kayak.'},
-    {text:'Supermercado Publix ou Walmart próximo ao hotel no primeiro dia',tags:['miami'],tip:'Água, snacks, fraldas, protetor solar — tudo muito mais barato que no hotel.'},
-    {text:'Little Havana (Calle Ocho) para almoço cubano barato e autêntico',tags:['miami'],tip:'US$12–18 por refeição completa — muito mais em conta que South Beach.'},
-    {text:'Wynwood Walls + Miami Design District — passeio gratuito ao ar livre',tags:['miami'],tip:'Wynwood tem grafites dos brasileiros Os Gêmeos e Eduardo Kobra.'},
+  {id:"ny_cl",icon:"🗽",title:"Nova York — lembretes",items:[
+    {text:"MetroCard recarregavel",tags:["ny"],tip:"Crianca ate 1m11cm nao paga. Carrinho pela porta lateral."},
+    {text:"Verificar estacoes com elevador nas rotas com carrinho",tags:["ny"]},
+    {text:"Estatua da Liberdade — reservar ingressos com antecedencia",tags:["ny"]},
+    {text:"CityPASS NYC se visitar 4+ atracoes — ate 40% de desconto",tags:["ny"]},
+    {text:"Compras fora de Times Square: TJ Maxx, Marshalls, Century 21",tags:["ny"]},
   ]},
-  { id:'economia', icon:'💰', title:'Dicas gerais de economia', items:[
-    {text:'Conta Nomad ou Wise para todas as compras (sem IOF de 6,38%)',tip:'Em US$5.000 de gastos = R$1.800+ economizados.'},
-    {text:'Bebê menor de 3 anos entra GRÁTIS na Disney e Universal',tip:'O Dudu não paga ingresso em nenhum parque americano!'},
-    {text:'Snacks e garrafinhas de água todo dia — shoppings têm bebedouros gratuitos'},
-    {text:'Outlets em Orlando: Nike, Gap, Tommy, Coach com 30–60% de desconto',tip:'Orlando Premium Outlets e Vineland Outlets — obrigatório para compras.'},
-    {text:'Verificar se o cartão de crédito já inclui seguro viagem embutido',tip:'Cartões Visa Infinite e Mastercard Black podem cobrir o seguro — economize R$500–1.500.'},
-    {text:'Primark no Florida Mall — produtos da Disney com ótimos preços'},
-    {text:'Aldi tem preços melhores que o Walmart + chocolates europeus baratos',tip:'Chocolates Choceur e salmão são especialmente baratos. Endereços nos favoritos.'},
-    {text:'Restaurantes econômicos em Orlando: Cicis Pizza (US$10,90 à vontade), Olive Garden, Tony\'s Brazilian Grill (US$22,95), Musashi Sushi (seg–qua US$59,90 o casal)'},
-    {text:'Voos domésticos reservados com 3–4 meses de antecedência'},
-    {text:'IHOP para café da manhã americano típico e barato'},
-    {text:'Chick-Fil-A: melhor sanduíche de frango de Orlando'},
+  {id:"miami_cl",icon:"🏖️",title:"Miami — lembretes",items:[
+    {text:"Barraquinha portatil para sombra do bebe na praia",tags:["mi"],tip:"Sol de Miami 10h-15h muito intenso para bebe."},
+    {text:"Protetor solar resistente a agua — reaplicar a cada 2h",tags:["mi"]},
+    {text:"Supermercado Publix/Walmart no primeiro dia",tags:["mi"]},
+    {text:"Carro alugado — praticamente obrigatorio com criancas",tags:["mi"]},
   ]},
-  { id:'mala', icon:'🧳', title:'Bagagem e organização', items:[
-    {text:'Mala grande com cadeado TSA (único aceito pelas autoridades americanas)',tip:'Sem cadeado TSA a mala pode ser arrombada na inspeção.'},
-    {text:'Carry-on de mão para o voo (medicamentos, documentos, eletrônicos)'},
-    {text:'Bolsa dia leve e antifurto para passeios'},
-    {text:'Organizadores de mala (cubes) — separe por pessoa'},
-    {text:'Saco ziplock para líquidos na bagagem de mão (máx 100ml cada)'},
-    {text:'Travesseiro de pescoço para adultos e crianças'},
-    {text:'Máscara de dormir e tampão de ouvido'},
-    {text:'Etiqueta de identificação em TODAS as malas com contato local'},
-    {text:'Espaço vazio reservado para compras',tip:'Mala extra no Walmart pode sair mais barato que despachar mala adicional na companhia.'},
+  {id:"mala",icon:"🧳",title:"Bagagem e organizacao",items:[
+    {text:"Mala grande com cadeado TSA",tip:"Sem cadeado TSA a mala pode ser arrombada na inspecao."},
+    {text:"Carry-on de mao — documentos, medicamentos, eletronicos"},
+    {text:"Bolsa dia leve e antifurto para passeios"},
+    {text:"Organizadores de mala (cubes) — um por pessoa"},
+    {text:"Saco ziplock para liquidos na carry-on (max 100ml)"},
+    {text:"Travesseiro de pescoco para adultos e criancas"},
+    {text:"Espaco vazio para compras",tip:"Mala extra no Walmart pode sair mais barato que taxa de bagagem adicional."},
   ]},
 ];
 
-const tagLabel = { docs:'docs', ny:'NY', orlando:'Orlando', miami:'Miami' };
-let checks = {};
-let sOpen = {};
+const TM = {dc:"docs",ny:"NY",or:"Orlando",mi:"Miami"};
+const TC = {dc:"t-dc",ny:"t-ny",or:"t-or",mi:"t-mi"};
+let chk={}, sO={};
 
-function loadCl(){ try{ const s=localStorage.getItem(STORE_KEY); if(s){const d=JSON.parse(s);checks=d.checks||{};sOpen=d.open||{};} }catch(e){} }
-function saveCl(){ try{localStorage.setItem(STORE_KEY,JSON.stringify({checks,open:sOpen}));}catch(e){} }
-function totalItems(){ return clData.reduce((s,c)=>s+c.items.length,0); }
-function checkedCount(){ return Object.values(checks).filter(Boolean).length; }
+function ld() { try { const s=localStorage.getItem(SK); if(s){const d=JSON.parse(s);chk=d.c||{};sO=d.o||{};} } catch(e){} }
+function sv() { try { localStorage.setItem(SK,JSON.stringify({c:chk,o:sO})); } catch(e){} }
+function tot() { return clData.reduce((s,c)=>s+c.items.length,0); }
+function dn() { return Object.values(chk).filter(Boolean).length; }
 
-function updateProgress(){
-  const total=totalItems(), done=checkedCount(), pct=total?Math.round(done/total*100):0;
-  document.getElementById('prog-fill').style.width=pct+'%';
-  document.getElementById('prog-text').textContent=done+' de '+total+' itens';
-  document.getElementById('prog-pct').textContent=pct+'%';
-  clData.forEach(sec=>{
-    const d=sec.items.filter((_,ii)=>checks[sec.id+'-'+ii]).length;
-    const b=document.getElementById('badge-'+sec.id);
-    if(b){b.textContent=d+'/'+sec.items.length;b.className='sec-badge'+(d===sec.items.length?' complete':'');}
-    const c=document.getElementById('count-'+sec.id);
-    if(c) c.textContent=d+' de '+sec.items.length+' concluídos';
+function upPg() {
+  const t=tot(),d=dn(),p=t?Math.round(d/t*100):0;
+  document.getElementById("pg-fl").style.width=p+"%";
+  document.getElementById("pg-l").textContent=d+" de "+t+" itens marcados";
+  document.getElementById("pg-p").textContent=p+"%";
+  const b=document.getElementById("cl-bdg");
+  b.textContent=d+" / "+t;
+  b.className="cl-bdg"+(d===t&&t>0?" ok":"");
+  clData.forEach(s => {
+    const sd=s.items.filter((_,i)=>chk[s.id+"-"+i]).length;
+    const el=document.getElementById("bd-"+s.id);
+    if(el){el.textContent=sd+"/"+s.items.length;el.className="sec-cnt"+(sd===s.items.length?" ok":"");}
+    const sub=document.getElementById("sb-"+s.id);
+    if(sub) sub.textContent=sd+" de "+s.items.length+" concluidos";
   });
 }
 
-function toggleItem(secId,ii){
-  const key=secId+'-'+ii;
-  checks[key]=!checks[key];
-  const box=document.getElementById('box-'+secId+'-'+ii);
-  const lbl=document.getElementById('lbl-'+secId+'-'+ii);
-  if(box){box.classList.toggle('checked',!!checks[key]);box.classList.add('pop');setTimeout(()=>box.classList.remove('pop'),260);}
-  if(lbl) lbl.className='item-text'+(checks[key]?' checked':'');
-  saveCl();updateProgress();
+function tgl(sid,ii) {
+  const k=sid+"-"+ii; chk[k]=!chk[k];
+  const b=document.getElementById("bx-"+sid+"-"+ii);
+  const l=document.getElementById("lb-"+sid+"-"+ii);
+  if(b){b.classList.toggle("on",!!chk[k]);b.classList.add("pop");setTimeout(()=>b.classList.remove("pop"),230);}
+  if(l) l.className="it-txt"+(chk[k]?" on":"");
+  sv(); upPg();
 }
 
-function toggleSection(id){
-  sOpen[id]=!sOpen[id];
-  document.getElementById('wrap-'+id)?.classList.toggle('open',!!sOpen[id]);
-  document.getElementById('chev-'+id)?.classList.toggle('open',!!sOpen[id]);
-  saveCl();
+function tglS(id) {
+  sO[id]=!sO[id];
+  document.getElementById("it-"+id)?.classList.toggle("open",!!sO[id]);
+  document.getElementById("ch-"+id)?.classList.toggle("open",!!sO[id]);
+  sv();
 }
 
-function expandAll(){ clData.forEach(s=>{sOpen[s.id]=true;document.getElementById('wrap-'+s.id)?.classList.add('open');document.getElementById('chev-'+s.id)?.classList.add('open');});saveCl(); }
-function collapseAll(){ clData.forEach(s=>{sOpen[s.id]=false;document.getElementById('wrap-'+s.id)?.classList.remove('open');document.getElementById('chev-'+s.id)?.classList.remove('open');});saveCl(); }
-function clearAll(){
-  if(!confirm('Limpar todos os itens marcados?')) return;
-  checks={};
-  clData.forEach(sec=>sec.items.forEach((_,ii)=>{
-    document.getElementById('box-'+sec.id+'-'+ii)?.classList.remove('checked');
-    const l=document.getElementById('lbl-'+sec.id+'-'+ii);
-    if(l) l.className='item-text';
+function expandAll() { clData.forEach(s=>{sO[s.id]=true;document.getElementById("it-"+s.id)?.classList.add("open");document.getElementById("ch-"+s.id)?.classList.add("open");});sv(); }
+function collapseAll() { clData.forEach(s=>{sO[s.id]=false;document.getElementById("it-"+s.id)?.classList.remove("open");document.getElementById("ch-"+s.id)?.classList.remove("open");});sv(); }
+function clearAll() {
+  if(!confirm("Limpar todos os itens marcados?")) return;
+  chk={};
+  clData.forEach(s=>s.items.forEach((_,i)=>{
+    document.getElementById("bx-"+s.id+"-"+i)?.classList.remove("on");
+    const l=document.getElementById("lb-"+s.id+"-"+i);
+    if(l) l.className="it-txt";
   }));
-  saveCl();updateProgress();
+  sv(); upPg();
 }
 
-function renderChecklist(){
-  const content=document.getElementById('cl-content');
-  content.innerHTML=clData.map(sec=>{
-    const itemsHtml=sec.items.map((item,ii)=>{
-      const isChecked=!!checks[sec.id+'-'+ii];
-      const tagsHtml=(item.tags||[]).map(t=>`<span class="tag tag-${t}">${tagLabel[t]||t}</span>`).join('');
-      const tipHtml=item.tip?`<div class="item-tip">💡 ${item.tip}</div>`:'';
-      return `<div class="item" onclick="toggleItem('${sec.id}',${ii})">
-        <div class="item-check${isChecked?' checked':''}" id="box-${sec.id}-${ii}"></div>
-        <div class="item-body">
-          <div class="item-text${isChecked?' checked':''}" id="lbl-${sec.id}-${ii}">${item.text}</div>
-          ${tagsHtml?`<div class="tags">${tagsHtml}</div>`:''}
-          ${tipHtml}
+function renCl() {
+  document.getElementById("cl-list").innerHTML = clData.map((s,si) => {
+    const st=SS[si%SS.length], op=!!sO[s.id];
+    const sd=s.items.filter((_,i)=>chk[s.id+"-"+i]).length;
+    return `<div class="sec">
+      <div class="sec-hd" onclick="tglS('${s.id}')">
+        <div class="sec-bar" style="background:${st.ac}"></div>
+        <div class="sec-ico" style="background:${st.bg}">${s.icon}</div>
+        <div class="sec-meta">
+          <div class="sec-name">${s.title}</div>
+          <div class="sec-sub" id="sb-${s.id}">${sd} de ${s.items.length} concluidos</div>
         </div>
-      </div>`;
-    }).join('');
-    const secDone=sec.items.filter((_,ii)=>checks[sec.id+'-'+ii]).length;
-    const isOpen=!!sOpen[sec.id];
-    return `<div class="section">
-      <div class="section-header" onclick="toggleSection('${sec.id}')">
-        <div class="sec-left">
-          <span class="sec-icon">${sec.icon}</span>
-          <div class="sec-info">
-            <div class="sec-title">${sec.title}</div>
-            <div class="sec-count" id="count-${sec.id}">${secDone} de ${sec.items.length} concluídos</div>
-          </div>
-        </div>
-        <div class="sec-right">
-          <span class="sec-badge${secDone===sec.items.length?' complete':''}" id="badge-${sec.id}">${secDone}/${sec.items.length}</span>
-          <span class="chevron${isOpen?' open':''}" id="chev-${sec.id}">▼</span>
+        <div class="sec-r">
+          <span class="sec-cnt${sd===s.items.length?" ok":""}" id="bd-${s.id}">${sd}/${s.items.length}</span>
+          <span class="chev${op?" open":""}" id="ch-${s.id}">&#x25BC;</span>
         </div>
       </div>
-      <div class="items-wrap${isOpen?' open':''}" id="wrap-${sec.id}">${itemsHtml}</div>
+      <div class="items${op?" open":""}" id="it-${s.id}">
+        ${s.items.map((it,i) => {
+          const on=!!chk[s.id+"-"+i];
+          const tags=(it.tags||[]).map(t=>`<span class="tag ${TC[t]}">${TM[t]}</span>`).join("");
+          return `<div class="it" onclick="tgl('${s.id}',${i})">
+            <div class="it-box${on?" on":""}" id="bx-${s.id}-${i}"></div>
+            <div class="it-body">
+              <div class="it-txt${on?" on":""}" id="lb-${s.id}-${i}">${it.text}</div>
+              ${tags?`<div class="tags">${tags}</div>`:""}
+              ${it.tip?`<div class="it-tip">${it.tip}</div>`:""}
+            </div>
+          </div>`;
+        }).join("")}
+      </div>
     </div>`;
-  }).join('');
-  updateProgress();
+  }).join("");
+  upPg();
 }
 
-buildCalendar();
-loadCl();
-renderChecklist();
+// Tips data
+const TD = [
+  {icon:"💰", title:"Economizar dinheiro", items:[
+    {e:"🎟️",m:"Ingressos dos parques no Brasil — sem IOF, parcelado em reais",s:"Evita 6,38% de IOF. Em uma familia de 4, a diferenca pode chegar a R$600+.",bv:"R$400-800",bt:"b-hi"},
+    {e:"🍼",m:"Bebe menor de 3 anos entra GRATIS na Disney e Universal",s:"O Dudu nao paga ingresso em nenhum parque americano!",bv:"US$130-200",bt:"b-hi"},
+    {e:"💳",m:"Conta Nomad ou Wise em TODAS as compras nos EUA",s:"Sem IOF de 6,38%. Em US$5.000 de gastos = R$1.800+ economizados.",bv:"R$1.800+ em US$5k",bt:"b-hi"},
+    {e:"🎠",m:"Promocao 4-Park Magic Disney 2026: 4 parques pelo preco de 3",s:"Valida jan-mai 2026. Economiza o valor de 1 parque por pessoa.",bv:"US$130-200/pessoa",bt:"b-hi"},
+    {e:"🌮",m:"Snacks e garrafinhas de agua todo dia nos parques",s:"Comida nos parques: US$15-25/prato. Snacks de fora economizam US$50-100 por dia.",bv:"US$50-100/dia",bt:"b-hi"},
+    {e:"🛒",m:"Souvenirs no Walmart Kissimmee — 40-60% mais barato que nos parques",s:"Mesmos produtos oficiais Disney. End: 2855 N Old Lake Wilson Rd, Kissimmee.",bv:"40-60% off",bt:"b-hi"},
+    {e:"🅿️",m:"Universal CityWalk: estacionar apos 18h — totalmente gratuito",s:"Estacionamento diurno: US$30. Apos 18h: US$0.",bv:"US$30 economizados",bt:"b-hi"},
+    {e:"🏬",m:"Outlets de Orlando: Nike, Gap, Tommy com 30-60% de desconto",s:"Orlando Premium Outlets e Vineland Outlets.",bv:"30-60% off",bt:"b-hi"},
+    {e:"🏪",m:"Supermercado Aldi tem precos melhores que Walmart",s:"Chocolates europeus baratos (Choceur). Salmao tambem e barato.",bv:"10-20% mais barato",bt:"b-mid"},
+    {e:"🍕",m:"Cicis Pizza: tudo a vontade por US$10,90",s:"Promocao segunda e terca: US$4,99.",bv:"US$5-11/pessoa",bt:"b-hi"},
+    {e:"🚗",m:"Abastecer o carro ANTES de devolver na locadora",s:"Postos dentro de aeroportos cobram 50-80% mais. Use GasBuddy na rota de devolucao.",bv:"US$20-60 economizados",bt:"b-hi"},
+    {e:"🏨",m:"Hotel fora de Times Square em NY: 30-40% mais barato",s:"Midtown East, Hells Kitchen ou Upper West Side ficam 10-15min de metro de Times Square.",bv:"30-40% off",bt:"b-hi"},
+    {e:"🎭",m:"MoMA gratuito as sextas apos 17h30",s:"Museum of Natural History: entrada por valor sugerido (pague quanto quiser).",bv:"US$30+/adulto",bt:"b-hi"},
+    {e:"🔑",m:"Verificar se o cartao inclui seguro viagem e seguro para carro alugado",s:"Visa Infinite e Mastercard Black cobrem. Economize R$500-1.500 no seguro viagem.",bv:"R$500-1.500",bt:"b-hi"},
+    {e:"🍗",m:"Chick-Fil-A: melhor sanduiche de frango de Orlando",s:"Rapido, barato e delicioso. Perfeito para dias de parque.",bv:"US$8-12/refeicao",bt:"b-mid"},
+    {e:"🍳",m:"IHOP: cafe da manha americano tipico por US$10-15",s:"Panquecas, ovos, bacon. A experiencia americana autentica."},
+    {e:"🧁",m:"Primark no Florida Mall — produtos Disney com otimos precos",s:"Camisetas e itens de marca Disney por precos muito abaixo dos parques."},
+  ]},
+  {icon:"⏱️", title:"Economizar tempo nos parques", items:[
+    {e:"🌅",m:"Chegar 45-60min antes da abertura todo dia de parque",s:"Primeira hora: filas 3-5x menores. Com bebe e crianca de 5 anos, vale ouro."},
+    {e:"⚡",m:"Lightning Lane Multi Pass (Disney): como usar",s:"Ative no app assim que entrar. Reserve a atracao mais disputada primeiro. Use sequencialmente."},
+    {e:"🔄",m:"Rider Switch (Disney): segundo adulto usa Lightning Lane depois",s:"Va com o bebe a entrada, avise o Cast Member. Segundo adulto quase sem fila depois."},
+    {e:"🔄",m:"Child Swap (Universal): funciona de forma similar",s:"Grupo na fila, avisa Child Swap, adulto espera em sala, segundo adulto vai direto."},
+    {e:"📲",m:"Virtual Queue gratuita para Guardians of the Galaxy",s:"Reserve no app as 7h assim que o parque abre. Esgota em minutos."},
+    {e:"🌧️",m:"Poncho de chuva pronto na mochila todo dia em Orlando",s:"Chuva quase todo dia a tarde. Quem esta preparado continua curtindo."},
+    {e:"🎠",m:"Skyliner Disney: mais rapido que onibus entre os resorts",s:"Teleferido gratuito. Parar no Art of Animation Hotel (cenario de Carros!)."},
+    {e:"🎭",m:"Desfiles e shows: chegar 30-45min antes",s:"Festival of Fantasy e Happily Ever After esgotam os bons lugares rapidamente."},
+  ]},
+  {icon:"🚗", title:"Dirigindo nos EUA — dicas essenciais", items:[
+    {e:"🪪",m:"CNH Internacional obrigatoria — CNH brasileira sozinha nao e aceita",s:"Emita no DETRAN antes da viagem. Valida por 6 meses. Leve junto com a CNH brasileira."},
+    {e:"📸",m:"Fotografar e enviar por e-mail as fotos do carro para a locadora",s:"Documente todos os arranhoes e amassados antes de sair. Prevencao de cobranças indevidas."},
+    {e:"💳",m:"Cartao de credito (nao debito) na retirada do carro",s:"Locadoras bloqueiam caucao. Com debito bloqueia saldo real. Com credito, nao impacta."},
+    {e:"🛣️",m:"Florida Turnpike: rodovia principal — toda eletronica",s:"E-ZPass/SunPass. Locadoras cobram taxa alta pelo sistema proprio."},
+    {e:"🚦",m:"Limites de velocidade: Turnpike 70mph, urbanas 35-45mph",s:"Fiscalizacao eletronica comum nas rodovias americanas."},
+    {e:"⛽",m:"GasBuddy: instalar antes de viajar para sempre abastecer no melhor preco",s:"Mostra postos mais baratos no mapa e permite pagar pelo app."},
+    {e:"📍",m:"Baixar mapa offline da Florida no Google Maps",s:"Seguranca extra para trechos de rodovia com sinal fraco."},
+    {e:"🅿️",m:"Rota recomendada: FLL a MCO pela Florida Turnpike",s:"~4h. Parada sugerida em Palm Beach Gardens."},
+    {e:"🚗",m:"Devolucao: devolver com tanque cheio e guardar comprovante",s:"MCO tem balcao de devolucao no aeroporto. Confira os itens do carro."},
+  ]},
+  {icon:"👶", title:"Viajando com bebe e crianca pequena", items:[
+    {e:"✈️",m:"Embarque prioritario com bebe + despacho gratuito do carrinho",s:"Informe no check-in. Valido em todos os voos internacionais."},
+    {e:"🛒",m:"Fraldas e formula nos EUA: Target, Walmart e Publix",s:"Formula: levar do Brasil — marcas brasileiras podem nao ter equivalente."},
+    {e:"🎠",m:"Carrinho de bebe nos parques: estacionamento ao lado das atracoes",s:"Cast Members indicam onde estacionar. Carrinho leve guarda-chuva e ideal."},
+    {e:"🔒",m:"Protetores de tomada: comprar 6+ antes de viajar",s:"Tomadas americanas sao acessiveis para bebes. Hoteis tem muitas tomadas."},
+    {e:"🆔",m:"Pulseirinha de identificacao + mochilinha com nome e contato",s:"Se a crianca se perder nos parques: procurar um Cast Member. Treinados para isso."},
+    {e:"☂️",m:"Barraquinha de praia pop-up para o bebe em Miami",s:"Sol de Miami 10h-15h muito intenso para bebe."},
+    {e:"🧴",m:"Protetor solar mineral para bebe — levar do Brasil",s:"Nos EUA e mais caro e dificil de encontrar as mesmas marcas."},
+  ]},
+  {icon:"🗽", title:"Nova York — dicas locais", items:[
+    {e:"🚇",m:"Metro NY: crianca ate 1m11cm nao paga",s:"Passa por baixo da catraca. Carrinho passa pela porta lateral acessivel."},
+    {e:"🚌",m:"Downtown Connection: onibus gratuito pela Lower Manhattan",s:"Conecta Battery Park ao Fulton Center. Perfeito para o dia da Estatua da Liberdade."},
+    {e:"🚿",m:"Melhores banheiros perto de Times Square",s:"Hard Rock Hotel, Loja da Disney, Marriott Marquis (lobby 8o andar, sobe sem falar com ninguem)"},
+    {e:"🍔",m:"Gastronomia iconica de NY",s:"Joes Pizza, Shake Shack, Katzs Deli (pastrami), Magnolia Bakery (banana pudding), Levain Bakery, Zuckers Bagels"},
+    {e:"🛍️",m:"Souvenirs baratos fora de Times Square",s:"Five Below (tudo ate US$5), Grand Slam (US$0,99), TJ Maxx para roupas"},
+    {e:"🎫",m:"CityPASS NYC: 40% de desconto em 6 atracoes principais",s:"Vale a pena se visitar Estatua da Liberdade, Museu de Historia Natural, Top of the Rock e mais."},
+    {e:"🚕",m:"Evitar taxi amarelo — usar Uber ou Lyft",s:"Mais barato e com preco fixo. Metro costuma ser mais rapido que qualquer carro."},
+  ]},
+  {icon:"🏖️", title:"Miami — dicas locais", items:[
+    {e:"🎨",m:"Wynwood Walls: grafites dos brasileiros Os Gemeos e Eduardo Kobra",s:"Passeio externo gratuito. Miami Design District ao lado: arte, moda e gastronomia."},
+    {e:"🇨🇺",m:"Little Havana (Calle Ocho): almoco autentico por US$12-18",s:"Muito mais em conta que restaurantes de South Beach."},
+    {e:"🏄",m:"Evitar South Beach com o bebe entre 10h-15h",s:"Sol muito intenso. Ir cedo (8h-10h) ou no final da tarde (16h+)."},
+    {e:"🛒",m:"Supermercado Publix ou Walmart no dia da chegada",s:"Agua, snacks, fraldas, protetor solar — 3-4x mais barato que o hotel."},
+    {e:"🍽️",m:"Little Brazil: 6984 Collins Ave, Miami Beach",s:"Comida brasileira de qualidade."},
+    {e:"🚗",m:"Carro alugado e essencial em Miami com criancas",s:"Transporte publico precario. Reserve com antecedencia."},
+  ]},
+];
+
+function renTips() {
+  document.getElementById("tips-wrap").innerHTML = TD.map(s => `
+    <div class="tip-sec">
+      <div class="tip-sec-hd"><span class="tip-sec-ico">${s.icon}</span><span class="tip-sec-ttl">${s.title}</span></div>
+      <div class="tip-body">
+        ${s.items.map(it => `
+          <div class="tip-row">
+            <div class="tip-ico">${it.e}</div>
+            <div class="tip-c">
+              <div class="tip-m">${it.m}</div>
+              <div class="tip-s">${it.s}</div>
+              ${it.bv ? `<span class="tip-bdg ${it.bt||"b-mid"}">&#x1F4B0; ${it.bv}</span>` : ""}
+            </div>
+          </div>`).join("")}
+      </div>
+    </div>`).join("");
+}
+
+ld(); renCl(); renTips();
 </script>
 </body>
 </html>
